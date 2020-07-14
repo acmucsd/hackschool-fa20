@@ -1,0 +1,29 @@
+{
+  "name": "hackschool-fa20",
+  "version": "1.0.0",
+  "description": "Pokemon Generator project for ACM's Fall 2020 Hack School",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/acmucsd/hackschool-fa20.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/acmucsd/hackschool-fa20/issues"
+  },
+  "homepage": "https://github.com/acmucsd/hackschool-fa20#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.23"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
