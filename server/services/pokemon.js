@@ -4,6 +4,10 @@ async function findAll() {
   return Pokemon.find();
 }
 
+async function findById(id) {
+  return Pokemon.findById(id);
+}
+
 module.exports = {
-  findAll,
+  findAll, findById
 }

@@ -1,27 +1,32 @@
 const express = require('express');
 const PokemonService = require('../services/pokemon');
+const multer = require('multer');
 
 const router = express.Router();
 
+const upload = multer({ dest: '../'});
+
 router.get('/pokemon', async (req, res) => {
   const pokemon = await PokemonService.findAll();
-  res.json({ pokemon })
+  res.status(200).json({ pokemon });
 })
 
-router.get('/pokemon/:id', (req, res) => {
-  res.send('GET /pokemon/:id reached');
+router.get('/pokemon/:id', async (req, res) => {
+  const pokemon = await PokemonService.findById(req.params.id);
+  res.status(200).json({ pokemon });
 })
 
-router.get('/pokemon/user/:id', (req, res) => {
-  res.send('GET /pokemon/user/:id reached');
+router.get('/pokemonName', async (req, res) => {
+  const pokemonName = await PokemonService.generateName();
+  res.status(200).json({ pokemonName });
 })
 
-router.get('/pokemonName', (req, res) => {
-  res.send('GET /pokemonName reached');
-})
-
-router.post('/pokemon', (req, res) => {
-  res.send('GET /pokemon/:id reached');
+router.post('/pokemon', upload.single('image'), async (req, res) => {
+  const { image } = req.file;
+  const { name, description, type1, type2, moves } = req.body;
+  const pokemon = { name, description, image, type1, type2, moves };
+  const newPokemon = await PokemonService.createPokemon(pokemon);
+  res.status(200).json({ newPokemon });
 })
 
 module.exports = router;
