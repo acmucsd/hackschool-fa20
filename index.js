@@ -1,12 +1,12 @@
 const express = require('express');
-const config = require('./src/config');
+const config = require('./server/config');
 const mongoose = require('mongoose');
 const server = express();
 
 server.use(express.urlencoded({ extended: true }));
 server.use(express.json());
 
-server.use('/api', require('./src/api'));
+server.use('/api', require('./server/api'));
 
 mongoose.connect(config.database_url, { useNewUrlParser: true, useUnifiedTopology: true }).then(() => {
   console.log('Connected to MongoDB database');

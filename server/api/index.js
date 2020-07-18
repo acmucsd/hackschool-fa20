@@ -4,7 +4,7 @@ const multer = require('multer');
 
 const router = express.Router();
 
-const upload = multer({ dest: '../'});
+const upload = multer({ dest: './server/uploads/'});
 
 router.get('/pokemon', async (req, res) => {
   const pokemon = await PokemonService.findAll();
@@ -22,7 +22,7 @@ router.get('/pokemonName', async (req, res) => {
 })
 
 router.post('/pokemon', upload.single('image'), async (req, res) => {
-  const { image } = req.file;
+  const image = req.file;
   const { name, description, type1, type2, moves } = req.body;
   const pokemon = { name, description, image, type1, type2, moves };
   const newPokemon = await PokemonService.createPokemon(pokemon);
