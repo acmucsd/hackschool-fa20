@@ -1,0 +1,19 @@
+.navbar {
+    background-color: #BF4141;
+    color: #FFF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .title {
+    margin: auto 16px;
+}
+
+.nav-buttons {
+    display: flex;
+}
+
+.nav-buttons .button {
+    margin: 16px;
+}
