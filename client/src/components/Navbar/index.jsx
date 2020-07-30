@@ -4,6 +4,9 @@ import { Button } from 'react-bootstrap';
 
 import './style.css';
 
+/**
+ * Navbar component with buttons that link to pages.
+ */
 const Navbar = () => {
     return (
         <div className="navbar">
