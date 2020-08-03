@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import './style.css';
 
 import Navbar from '../components/Navbar';
+import CanvasDraw from 'react-canvas-draw';
 
 const CreatePokemon = () => {
     const [name, setName] = useState();
+    const [color, setColor] = useState('#000');
 
     /**
      * Method to handle the creation of a Pokemon on form submit.
@@ -25,22 +27,33 @@ const CreatePokemon = () => {
         <div>
             <Navbar />
             <div className="create-page">
-                <div className="canvas">
-                    <p>insert canvas component here</p>
+                <div class="drawing">
+                    <h2>Draw your Pokemon here!</h2>
+                    <div className="canvas">
+                        <CanvasDraw hideGrid={true}
+                            hideInterface={true}
+                            brushColor={color}
+                            brushRadius={5}
+                            style={{ width: '100%', height: '100%' }} />
+                    </div>
+                    <div className="color-picker">
+                        <label for="select-color">Color</label>
+                        <input type="color" id="select-color" value={color} onChange={(e) => setColor(e.target.value)}></input>
+                    </div>
                 </div>
                 <div className="pokemon-form">
                     <h2>Create a Pokemon</h2>
-                    <form>
-                        <div>
+                    <form onSubmit={handleCreatePokemon}>
+                        <div class="name-row">
                             <label for="name">Name</label>
                             <input type="text" id="name" name="name" value={name}></input>
-                            <button onClick={randName}>Generate Random Name</button>
+                            <button type="button" onClick={randName}>Generate Random Name</button>
                         </div>
-                        <div>
+                        <div class="desc-row">
                             <label for="desc">Description</label>
                             <input type="text" id="desc" name="desc"></input>
                         </div>
-                        <div>
+                        <div class="type-row">
                             <label for="type1">Type 1</label>
                             <select id="type1" name="type1">
                                 <option>Normal</option>
@@ -85,7 +98,7 @@ const CreatePokemon = () => {
                                 <option>Steel</option>
                             </select>
                         </div>
-                        <div>
+                        <div class="move-row">
                             <label for="move1">Move 1</label>
                             <input type="text" id="move1" name="move1"></input>
                             <label for="move1-type">Type</label>
@@ -112,7 +125,7 @@ const CreatePokemon = () => {
                             <label for="move1-power">Power</label>
                             <input type="number" id="move1-power" name="move1-power" min="0" max="100" defaultValue="0"></input>
                         </div>
-                        <div>
+                        <div class="move-row">
                             <label for="move2">Move 2</label>
                             <input type="text" id="move2" name="move2"></input>
                             <label for="move2-type">Type</label>
@@ -139,7 +152,7 @@ const CreatePokemon = () => {
                             <label for="move2-power">Power</label>
                             <input type="number" id="move2-power" name="move2-power" min="0" max="100" defaultValue="0"></input>
                         </div>
-                        <div>
+                        <div class="move-row">
                             <label for="move3">Move 3</label>
                             <input type="text" id="move3" name="move3"></input>
                             <label for="move3-type">Type</label>
@@ -166,7 +179,7 @@ const CreatePokemon = () => {
                             <label for="move3-power">Power</label>
                             <input type="number" id="move3-power" name="move3-power" min="0" max="100" defaultValue="0"></input>
                         </div>
-                        <div>
+                        <div class="move-row">
                             <label for="move4">Move 4</label>
                             <input type="text" id="move4" name="move4"></input>
                             <label for="move4-type">Type</label>
@@ -193,7 +206,7 @@ const CreatePokemon = () => {
                             <label for="move4-power">Power</label>
                             <input type="number" id="move4-power" name="move4-power" min="0" max="100" defaultValue="0"></input>
                         </div>
-                        <button type="submit">Create Pokemon</button>
+                        <input type="submit" value="Submit"></input>
                     </form>
                 </div>
             </div>

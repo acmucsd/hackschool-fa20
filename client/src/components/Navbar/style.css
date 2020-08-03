@@ -11,10 +11,8 @@
     margin: auto 16px;
 }
 
-.nav-buttons {
-    display: flex;
-}
-
-.nav-buttons .button {
+.nav-buttons a {
+    color: #FFF;
     margin: 16px;
+    text-decoration: none;
 }

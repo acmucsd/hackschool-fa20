@@ -4,9 +4,23 @@
     margin-top: 25px;
 }
 
+.drawing {
+    width: 35%;
+}
+
 .canvas {
     border: 1px solid black;
-    width: 60%;
+    height: 600px;
+    margin: auto;
+}
+
+.color-picker {
+    display: flex;
+    justify-content: center;
+}
+
+.color-picker label {
+    margin-right: 5px;
 }
 
 .pokemon-form {
