@@ -1,12 +1,18 @@
 import React from 'react';
 import './App.css';
 import CreatePokemon from './pages/CreatePokemon';
+import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
 
 const App = () => {
   return (
-    <div className="App">
-      <CreatePokemon />
-    </div>
+    <Router>
+      <div className="App">
+        <Switch>
+          <Redirect from="/" exact to="/create" />
+          <Route exact path="/create" component={CreatePokemon} />
+        </Switch>
+      </div>
+    </Router>
   );
 }
 

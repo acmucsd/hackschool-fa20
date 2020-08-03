@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import './style.css';
 
 import Navbar from '../components/Navbar';
-import { Form, Button } from 'react-bootstrap';
 
 const CreatePokemon = () => {
     const [name, setName] = useState();
@@ -31,19 +30,19 @@ const CreatePokemon = () => {
                 </div>
                 <div className="pokemon-form">
                     <h2>Create a Pokemon</h2>
-                    <Form>
-                        <Form.Group controlId="formGroupName">
-                            <Form.Label>Name</Form.Label>
-                            <Form.Control type="text" value={name} />
-                            <Button onClick={randName}>Generate Random Name</Button>
-                        </Form.Group>
-                        <Form.Group controlId="formGroupDesc">
-                            <Form.Label>Description</Form.Label>
-                            <Form.Control type="text" />
-                        </Form.Group>
-                        <Form.Group controlId="formGroupType">
-                            <Form.Label>Type(s)</Form.Label>
-                            <Form.Control as="select">
+                    <form>
+                        <div>
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" value={name}></input>
+                            <button onClick={randName}>Generate Random Name</button>
+                        </div>
+                        <div>
+                            <label for="desc">Description</label>
+                            <input type="text" id="desc" name="desc"></input>
+                        </div>
+                        <div>
+                            <label for="type1">Type 1</label>
+                            <select id="type1" name="type1">
                                 <option>Normal</option>
                                 <option>Fire</option>
                                 <option>Water</option>
@@ -62,8 +61,9 @@ const CreatePokemon = () => {
                                 <option>Bug</option>
                                 <option>Ghost</option>
                                 <option>Steel</option>
-                            </Form.Control>
-                            <Form.Control as="select">
+                            </select>
+                            <label for="type2">Type 2</label>
+                            <select id="type2" name="type2">
                                 <option value=""></option>
                                 <option>Normal</option>
                                 <option>Fire</option>
@@ -83,13 +83,13 @@ const CreatePokemon = () => {
                                 <option>Bug</option>
                                 <option>Ghost</option>
                                 <option>Steel</option>
-                            </Form.Control>
-                        </Form.Group>
-                        <Form.Group controlId="formMove1">
-                            <Form.Label>Move 1</Form.Label>
-                            <Form.Control type="text" />
-                            <Form.Label>Type</Form.Label>
-                            <Form.Control as="select">
+                            </select>
+                        </div>
+                        <div>
+                            <label for="move1">Move 1</label>
+                            <input type="text" id="move1" name="move1"></input>
+                            <label for="move1-type">Type</label>
+                            <select id="move1-type" name="move1-type">
                                 <option>Normal</option>
                                 <option>Fire</option>
                                 <option>Water</option>
@@ -108,15 +108,15 @@ const CreatePokemon = () => {
                                 <option>Bug</option>
                                 <option>Ghost</option>
                                 <option>Steel</option>
-                            </Form.Control>
-                            <Form.Label>Power</Form.Label>
-                            <Form.Control type="number" min="0" max="100" defaultValue="0" />
-                        </Form.Group>
-                        <Form.Group controlId="formMove2">
-                            <Form.Label>Move 2</Form.Label>
-                            <Form.Control type="text" />
-                            <Form.Label>Type</Form.Label>
-                            <Form.Control as="select">
+                            </select>
+                            <label for="move1-power">Power</label>
+                            <input type="number" id="move1-power" name="move1-power" min="0" max="100" defaultValue="0"></input>
+                        </div>
+                        <div>
+                            <label for="move2">Move 2</label>
+                            <input type="text" id="move2" name="move2"></input>
+                            <label for="move2-type">Type</label>
+                            <select id="move2-type" name="move2-type">
                                 <option>Normal</option>
                                 <option>Fire</option>
                                 <option>Water</option>
@@ -135,15 +135,15 @@ const CreatePokemon = () => {
                                 <option>Bug</option>
                                 <option>Ghost</option>
                                 <option>Steel</option>
-                            </Form.Control>
-                            <Form.Label>Power</Form.Label>
-                            <Form.Control type="number" min="0" max="100" defaultValue="0" />
-                        </Form.Group>
-                        <Form.Group controlId="formMove3">
-                            <Form.Label>Move 3</Form.Label>
-                            <Form.Control type="text" />
-                            <Form.Label>Type</Form.Label>
-                            <Form.Control as="select">
+                            </select>
+                            <label for="move2-power">Power</label>
+                            <input type="number" id="move2-power" name="move2-power" min="0" max="100" defaultValue="0"></input>
+                        </div>
+                        <div>
+                            <label for="move3">Move 3</label>
+                            <input type="text" id="move3" name="move3"></input>
+                            <label for="move3-type">Type</label>
+                            <select id="move3-type" name="move3-type">
                                 <option>Normal</option>
                                 <option>Fire</option>
                                 <option>Water</option>
@@ -162,15 +162,15 @@ const CreatePokemon = () => {
                                 <option>Bug</option>
                                 <option>Ghost</option>
                                 <option>Steel</option>
-                            </Form.Control>
-                            <Form.Label>Power</Form.Label>
-                            <Form.Control type="number" min="0" max="100" defaultValue="0" />
-                        </Form.Group>
-                        <Form.Group controlId="formMove4">
-                            <Form.Label>Move 4</Form.Label>
-                            <Form.Control type="text" />
-                            <Form.Label>Type</Form.Label>
-                            <Form.Control as="select">
+                            </select>
+                            <label for="move3-power">Power</label>
+                            <input type="number" id="move3-power" name="move3-power" min="0" max="100" defaultValue="0"></input>
+                        </div>
+                        <div>
+                            <label for="move4">Move 4</label>
+                            <input type="text" id="move4" name="move4"></input>
+                            <label for="move4-type">Type</label>
+                            <select id="move4-type" name="move4-type">
                                 <option>Normal</option>
                                 <option>Fire</option>
                                 <option>Water</option>
@@ -189,12 +189,12 @@ const CreatePokemon = () => {
                                 <option>Bug</option>
                                 <option>Ghost</option>
                                 <option>Steel</option>
-                            </Form.Control>
-                            <Form.Label>Power</Form.Label>
-                            <Form.Control type="number" min="0" max="100" defaultValue="0" />
-                        </Form.Group>
-                        <Button type="submit">Create Pokemon</Button>
-                    </Form>
+                            </select>
+                            <label for="move4-power">Power</label>
+                            <input type="number" id="move4-power" name="move4-power" min="0" max="100" defaultValue="0"></input>
+                        </div>
+                        <button type="submit">Create Pokemon</button>
+                    </form>
                 </div>
             </div>
         </div>
