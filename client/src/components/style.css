@@ -1,0 +1,39 @@
+.pokemon-card-container {
+    border-color: #999999;
+    border-style: solid;
+    border-radius: 5px;
+    border-width: 2px;
+    box-shadow: 2% 4vh 10px #222222;
+    width: 20vw;
+    height: 40vh;
+    min-width: 200px;
+    min-height: 240px;
+    overflow-y: scroll;
+}
+
+.pokemon-card-container p {
+    margin: 0.5em;
+}
+
+.pokemon-photo {
+    max-width: 100%;
+    border-radius: 4px 4px 0 0;
+}
+
+.pokemon-name {
+    font-weight: bold;
+}
+
+.pokemon-description {
+    color: #999999;
+    font-size: 0.8em;
+    font-style: italic;
+}
+
+.pokemon-types {
+    display: flex;
+}
+
+.pokemon-types span {
+    display: inline;
+}
