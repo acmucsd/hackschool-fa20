@@ -61,6 +61,7 @@ const PokemonCard = (props) => {
     let movesSection = () =>{ 
         return props.moves.length === 0 ? noMoves(): pokemonMoves;
     }
+    
     return(
         <div className="pokemon-card-container">
             <img className="pokemon-photo" src={props.image} alt="Oh no! Pokemon photo failed to load :(" />
