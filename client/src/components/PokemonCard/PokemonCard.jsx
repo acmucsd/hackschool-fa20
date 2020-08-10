@@ -4,7 +4,7 @@ import './style.css';
 const PokemonCard = (props) => {
 
     /* Changes font color based on the pokemon type */
-    const getColor = (type) => {
+    const getStyle = (type) => {
         switch(type) {
             case null:
                 return {};
@@ -55,8 +55,8 @@ const PokemonCard = (props) => {
             <p className="pokemon-name"> {props.name}</p>
             <p className="pokemon-description">{props.desc}</p>
             <p className="pokemon-types">
-                <span className="pokemon-type-1" style={getColor(props.type1)}>{props.type1}</span> {'\u00A0'}
-                <span className="pokemon-type-2" style={getColor(props.type2)}>{props.type2}</span>
+                <span className="pokemon-type-1" style={getStyle(props.type1)}>{props.type1}</span> {'\u00A0'}
+                <span className="pokemon-type-2" style={getStyle(props.type2)}>{props.type2}</span>
             </p>
         </div>
     );
