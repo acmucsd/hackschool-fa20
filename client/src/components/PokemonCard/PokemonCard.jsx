@@ -51,9 +51,9 @@ const PokemonCard = (props) => {
 
     return(
         <div className="pokemon-card-container">
-            <img className="pokemon-photo" src={props.image} />
+            <img className="pokemon-photo" src={props.image} alt="Oh no! Pokemon photo failed to load :(" />
             <p className="pokemon-name"> {props.name}</p>
-            <p className="pokemon-description">{props.description}</p>
+            <p className="pokemon-description">{props.desc}</p>
             <p className="pokemon-types">
                 <span className="pokemon-type-1" style={getColor(props.type1)}>{props.type1}</span> {'\u00A0'}
                 <span className="pokemon-type-2" style={getColor(props.type2)}>{props.type2}</span>
