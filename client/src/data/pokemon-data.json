@@ -1,0 +1,56 @@
+{
+    "pokemons": [
+        {
+            "image": "https://cdn.gamer-network.net/2019/usgamer/Pokemon-Sword-and-Shield-Pikachu-Screenshot.jpg/EG11/thumbnail/1920x1080/format/jpg/quality/65/pokemon-sword-and-shield-gives-you-an-up-close-look-at-a-pikachu-squirming-against-its-inevitable-end.jpg",
+            "name": "Foo Bar",
+            "desc": "Please don't be traumatized by my name, I'm friendly",
+            "type1": "Fairy",
+            "type2": "Electric",
+            "moves": [
+                {
+                    "name": "Play cute",
+                    "type": "Fairy",
+                    "power": 100
+                },
+                {
+                    "name": "Be Angry",
+                    "type": "Electric",
+                    "power": 100
+                }
+            ]
+        },
+        {
+            "image": "https://cdn.gamer-network.net/2019/usgamer/Pokemon-Sword-and-Shield-Pikachu-Screenshot.jpg/EG11/thumbnail/1920x1080/format/jpg/quality/65/pokemon-sword-and-shield-gives-you-an-up-close-look-at-a-pikachu-squirming-against-its-inevitable-end.jpg",
+            "name": "Nullpointer",
+            "desc": "Please don't be traumatized by my name, I'm friendly",
+            "type1": "Bug",
+            "type2": "Dark",
+            "moves": [
+                {
+                    "name": "Traumatize",
+                    "type": "Dark",
+                    "power": 150
+                },
+                {
+                    "name": "Throw Bug",
+                    "type": "Bug",
+                    "power": 120
+                }
+            ]
+        },
+        {
+            "image": "https://cdn.gamer-network.net/2019/usgamer/Pokemon-Sword-and-Shield-Pikachu-Screenshot.jpg/EG11/thumbnail/1920x1080/format/jpg/quality/65/pokemon-sword-and-shield-gives-you-an-up-close-look-at-a-pikachu-squirming-against-its-inevitable-end.jpg",
+            "name": "Seg Fault",
+            "desc": "Please don't be traumatized by my name, I'm friendly",
+            "type1": "Psychic",
+            "type2": "",
+            "moves": [
+                {
+                    "name": "Core Dumped",
+                    "type": "Psychic",
+                    "power": 200
+                }
+            ]
+        }
+    ]
+}
