@@ -1,14 +1,26 @@
 .pokemon-card-container {
+    display: inline-block;
     border-color: #999999;
     border-style: solid;
     border-radius: 5px;
     border-width: 2px;
     box-shadow: 2% 4vh 10px #222222;
     width: 20vw;
-    height: 40vh;
+    height: 45vh;
     min-width: 200px;
     min-height: 240px;
     overflow-y: scroll;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.pokemon-card-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.pokemon-card-container {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
 
 .pokemon-card-container p {
