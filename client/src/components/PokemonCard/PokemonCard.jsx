@@ -1,4 +1,5 @@
 import React from 'react';
+import Move from '../Move/Move';
 import './style.css';
 
 const PokemonCard = (props) => {
@@ -49,15 +50,30 @@ const PokemonCard = (props) => {
         }
     }
 
+    let pokemonMoves = props.moves.map((move) =>{
+        return <Move name={move.name} type={move.type} power={move.power}/>
+    })
+
+    const noMoves = () => {
+        return <tr>This Pokemon has no moves :(</tr>;
+    }
+
+    let movesSection = () =>{ 
+        return props.moves.length === 0 ? noMoves(): pokemonMoves;
+    }
     return(
         <div className="pokemon-card-container">
             <img className="pokemon-photo" src={props.image} alt="Oh no! Pokemon photo failed to load :(" />
-            <p className="pokemon-name"> {props.name}</p>
+            <p className="pokemoncard-bold"> {props.name}</p>
             <p className="pokemon-description">{props.desc}</p>
             <p className="pokemon-types">
                 <span className="pokemon-type-1" style={getStyle(props.type1)}>{props.type1}</span> {'\u00A0'}
                 <span className="pokemon-type-2" style={getStyle(props.type2)}>{props.type2}</span>
             </p>
+            <p className="pokemoncard-bold">Moves: </p>
+            <table className="moves-table">
+                {movesSection()}
+            </table>
         </div>
     );
 }

@@ -32,7 +32,7 @@
     border-radius: 4px 4px 0 0;
 }
 
-.pokemon-name {
+.pokemoncard-bold {
     font-weight: bold;
 }
 
@@ -47,4 +47,8 @@
 
 .pokemon-types span {
     display: inline;
+}
+
+.moves-table {
+    margin-left: 0.5em;
 }
