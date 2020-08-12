@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import PokemonCard from '../../components/PokemonCard/PokemonCard';
 // Uncomment the two lines below after merging with Henry's branch
 // import Navbar from '../../components/Navbar/index';
@@ -10,19 +10,61 @@ import pokemons from '../../data/pokemon-data.json';
 
 const ViewPokemons = () => {
 
-    // Probably looks like this or something lol please feel free to change if wrong
-    // const pokemonList = await API.getAllPokemons(); 
+    const [filter, setFilter] = useState("All");
 
-    // Replace the line below with the line above once API is done
+    // Probably looks like this or something lol please change if it's wrong
+    /* const pokemonList;
+       useEffect(() => {
+       API.getAllPokemons()
+       .then((response) => {
+           pokemonList = response;
+       })
+    }, []) */
+
+    // Replace code about hard-coded data once API is done
     const pokemonList = pokemons.pokemons;
+    const [body, setBody] = useState(pokemonList);
 
-    const currentPokemons = pokemonList.map((pokemon) => {
-        return(<PokemonCard image={pokemon.image} name={pokemon.name}
-        desc={pokemon.desc} type1={pokemon.type1} type2={pokemon.type2} moves={pokemon.moves}/>);
+    const currentPokemons = body.map((pokemon) => {
+        const appears = filter==="All" || pokemon.type1===filter || pokemon.type2===filter;
+        return (appears && <PokemonCard image={pokemon.image} name={pokemon.name}
+            desc={pokemon.desc} type1={pokemon.type1} type2={pokemon.type2} moves={pokemon.moves} />);
     })
 
-    return(
+    const handleTypeChange = (event) => {
+        setFilter(event.target.value);
+    }
+
+    useEffect(() => {
+        setBody(pokemonList);
+    }, [])
+
+    return (
         <div>
+            <label htmlFor="type">Filter by type:{'\u00A0'}</label>
+            <select id="type" name="type" onChange={handleTypeChange}>
+                <option value="All">All</option>
+                <option value="Normal">Normal</option>
+                <option value="Fire">Fire</option>
+                <option value="Water">Water</option>
+                <option value="Grass">Grass</option>
+                <option value="Electric">Electric</option>
+                <option value="Psychic">Psychic</option>
+                <option value="Ice">Ice</option>
+                <option value="Dragon">Dragon</option>
+                <option value="Dark">Dark</option>
+                <option value="Fairy">Fairy</option>
+                <option value="Fighting">Fighting</option>
+                <option value="Flying">Flying</option>
+                <option value="Poison">Poison</option>
+                <option value="Ground">Ground</option>
+                <option value="Rock">Rock</option>
+                <option value="Bug">Bug</option>
+                <option value="Ghost">Ghost</option>
+                <option value="Steel">Steel</option>
+            </select>
+            <br/>
+
             {currentPokemons}
         </div>
     );
