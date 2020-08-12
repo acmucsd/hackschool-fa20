@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import PokemonCard from '../../components/PokemonCard/PokemonCard';
-// Uncomment the two lines below after merging with Henry's branch
+// TODO: Uncomment the two lines below after merging with Henry's branch
 // import Navbar from '../../components/Navbar/index';
 // import API from '../../API';
 
-// Remove the below line once merged with Henry's branch
+// TODO: Remove the below line once merged with Henry's branch
 import pokemons from '../../data/pokemon-data.json';
 
 
@@ -21,12 +21,15 @@ const ViewPokemons = () => {
        })
     }, []) */
 
-    // Replace code about hard-coded data once API is done
+    // TODO: Replace code about hard-coded data once API is done
     const pokemonList = pokemons.pokemons;
     const [body, setBody] = useState(pokemonList);
 
+    let renderedPokemons = false;
+
     const currentPokemons = body.map((pokemon) => {
         const appears = filter==="All" || pokemon.type1===filter || pokemon.type2===filter;
+        if(appears){renderedPokemons = true;}
         return (appears && <PokemonCard image={pokemon.image} name={pokemon.name}
             desc={pokemon.desc} type1={pokemon.type1} type2={pokemon.type2} moves={pokemon.moves} />);
     })
@@ -38,6 +41,20 @@ const ViewPokemons = () => {
     useEffect(() => {
         setBody(pokemonList);
     }, [])
+
+    /* TODO: Once routing is done, replace the link with a link to the Create Pokemon page*/
+    const emptyList = () => {
+        return(
+            <div>
+            <p>No pokemons with the corresponding types found :(</p>
+            <p>Try changing the filter, or create a pokemon <a href="/">here</a></p>
+            </div>
+        );
+    }
+
+    const listBody = () => {
+        return renderedPokemons ? currentPokemons : emptyList(); 
+    }
 
     return (
         <div>
@@ -65,7 +82,7 @@ const ViewPokemons = () => {
             </select>
             <br/>
 
-            {currentPokemons}
+            {listBody()}
         </div>
     );
 }
