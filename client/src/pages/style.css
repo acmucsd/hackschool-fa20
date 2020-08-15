@@ -19,13 +19,43 @@ label {
     margin: auto;
 }
 
+.canvas-options {
+    display: flex;
+    justify-content: center;
+}
+
+.canvas-options button {
+    margin: 5px;
+}
+
 .color-picker {
     display: flex;
     justify-content: center;
+    margin: 5px;
 }
 
 .pokemon-form {
     border: 1px solid black;
     padding: 20px;
     width: 35%;
+}
+
+.name-row {
+    margin-bottom: 16px;
+}
+
+.name-row button {
+    margin-left: 10px;
+}
+
+.desc-row {
+    margin-bottom: 16px;
+}
+
+.type-row {
+    margin-bottom: 16px;
+}
+
+.move-row {
+    margin-bottom: 16px;
 }
