@@ -2,10 +2,7 @@ import axios from 'axios';
 
 export default {
     getPokemonName: function () {
-        const min = 4;
-        const max = 11;
-        return axios.get(`https://uzby.com/api.php?min=${min}&max=${max}`);
-        // return axios.get('/api/pokemonName');
+        return axios.get('https://hackschool-fa20-test-server.herokuapp.com/api/pokemonName');
     },
 
     createPokemon: function (payload) {

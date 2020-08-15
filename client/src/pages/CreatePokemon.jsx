@@ -55,8 +55,7 @@ const CreatePokemon = () => {
     const randName = async () => {
         // use some API to generate random pokemon name
         const randName = await API.getPokemonName();
-        console.log(randName);
-        setName(Math.random());
+        setName(randName.data);
     };
 
     return (
