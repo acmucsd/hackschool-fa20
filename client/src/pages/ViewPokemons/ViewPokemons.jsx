@@ -6,6 +6,7 @@ import PokemonCard from '../../components/PokemonCard/PokemonCard';
 
 // TODO: Remove the below line once merged with Henry's branch
 import pokemons from '../../data/pokemon-data.json';
+import '../style.css';
 
 
 const ViewPokemons = () => {
@@ -28,8 +29,8 @@ const ViewPokemons = () => {
     let renderedPokemons = false;
 
     const currentPokemons = body.map((pokemon) => {
-        const appears = filter==="All" || pokemon.type1===filter || pokemon.type2===filter;
-        if(appears){renderedPokemons = true;}
+        const appears = filter === "All" || pokemon.type1 === filter || pokemon.type2 === filter;
+        if (appears) { renderedPokemons = true; }
         return (appears && <PokemonCard image={pokemon.image} name={pokemon.name}
             desc={pokemon.desc} type1={pokemon.type1} type2={pokemon.type2} moves={pokemon.moves} />);
     })
@@ -44,43 +45,47 @@ const ViewPokemons = () => {
 
     /* TODO: Once routing is done, replace the link with a link to the Create Pokemon page*/
     const emptyList = () => {
-        return(
-            <div>
-            <p>No pokemons with the corresponding types found :(</p>
-            <p>Try changing the filter, or create a pokemon <a href="/">here</a></p>
+        return (
+            <div className="pokemon-empty-result">
+                <div className="pokemon-empty-result-inner">
+                <p>No pokemons with the corresponding type found :(</p>
+                <p>Try changing the filter, or create a pokemon <a href="/">here</a></p>
+                </div>
             </div>
         );
     }
 
     const listBody = () => {
-        return renderedPokemons ? currentPokemons : emptyList(); 
+        return renderedPokemons ? currentPokemons : emptyList();
     }
 
     return (
         <div>
-            <label htmlFor="type">Filter by type:{'\u00A0'}</label>
-            <select id="type" name="type" onChange={handleTypeChange}>
-                <option value="All">All</option>
-                <option value="Normal">Normal</option>
-                <option value="Fire">Fire</option>
-                <option value="Water">Water</option>
-                <option value="Grass">Grass</option>
-                <option value="Electric">Electric</option>
-                <option value="Psychic">Psychic</option>
-                <option value="Ice">Ice</option>
-                <option value="Dragon">Dragon</option>
-                <option value="Dark">Dark</option>
-                <option value="Fairy">Fairy</option>
-                <option value="Fighting">Fighting</option>
-                <option value="Flying">Flying</option>
-                <option value="Poison">Poison</option>
-                <option value="Ground">Ground</option>
-                <option value="Rock">Rock</option>
-                <option value="Bug">Bug</option>
-                <option value="Ghost">Ghost</option>
-                <option value="Steel">Steel</option>
-            </select>
-            <br/>
+            <div className="pokemon-filter">
+                <label htmlFor="type">Filter by type:{'\u00A0'}</label>
+                <select id="type" name="type" onChange={handleTypeChange}>
+                    <option value="All">All</option>
+                    <option value="Normal">Normal</option>
+                    <option value="Fire">Fire</option>
+                    <option value="Water">Water</option>
+                    <option value="Grass">Grass</option>
+                    <option value="Electric">Electric</option>
+                    <option value="Psychic">Psychic</option>
+                    <option value="Ice">Ice</option>
+                    <option value="Dragon">Dragon</option>
+                    <option value="Dark">Dark</option>
+                    <option value="Fairy">Fairy</option>
+                    <option value="Fighting">Fighting</option>
+                    <option value="Flying">Flying</option>
+                    <option value="Poison">Poison</option>
+                    <option value="Ground">Ground</option>
+                    <option value="Rock">Rock</option>
+                    <option value="Bug">Bug</option>
+                    <option value="Ghost">Ghost</option>
+                    <option value="Steel">Steel</option>
+                </select>
+            </div>
+            <br />
 
             {listBody()}
         </div>

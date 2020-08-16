@@ -1,0 +1,25 @@
+.pokemon-filter {
+    margin-left: 2vw;
+    margin-bottom: 0;
+}
+
+.pokemon-empty-result {
+    margin-left: 2vw;
+    border: 2px solid #4141BF;
+    background-color: #4141BF;
+    border-radius: 5px;
+    max-width: 400px;
+}
+
+.pokemon-empty-result-inner {
+    color: white;
+    padding: 1vw;
+}
+
+.pokemon-empty-result-inner a {
+    color: #BFBF41;
+}
+
+.pokemon-empty-result-inner a:visited {
+    color: #BFBF41;
+}
