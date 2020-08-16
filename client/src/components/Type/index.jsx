@@ -2,8 +2,10 @@ import React from 'react';
 import './style.css';
 
 const Type = ({ id }) => {
+    const defaultEmpty = ['type2', 'move2type', 'move3type', 'move4type'];
+
     let emptyOption;
-    if (id === "type2") {
+    if (defaultEmpty.includes(id)) {
         emptyOption = <option value=""></option>;
     }
 

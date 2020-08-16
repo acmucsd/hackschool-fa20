@@ -45,8 +45,7 @@ const CreatePokemon = () => {
                 }
             ]
         };
-        console.log(payload);
-        // API.createPokemon(payload);
+        API.createPokemon(payload);
     };
 
     /**
@@ -118,7 +117,7 @@ const CreatePokemon = () => {
                     </div>
                     <div className="move-row">
                         <label htmlFor="move2">Move 2</label>
-                        <input type="text" id="move2" name="move2" required></input>
+                        <input type="text" id="move2" name="move2"></input>
                         <label htmlFor="move2type">Type</label>
                         <Type id={'move2type'} />
                         <label htmlFor="move2power">Power</label>
@@ -126,7 +125,7 @@ const CreatePokemon = () => {
                     </div>
                     <div className="move-row">
                         <label htmlFor="move3">Move 3</label>
-                        <input type="text" id="move3" name="move3" required></input>
+                        <input type="text" id="move3" name="move3"></input>
                         <label htmlFor="move3type">Type</label>
                         <Type id={'move3type'} />
                         <label htmlFor="move3power">Power</label>
@@ -134,7 +133,7 @@ const CreatePokemon = () => {
                     </div>
                     <div className="move-row">
                         <label htmlFor="move4">Move 4</label>
-                        <input type="text" id="move4" name="move4" required></input>
+                        <input type="text" id="move4" name="move4"></input>
                         <label htmlFor="move4type">Type</label>
                         <Type id={'move4type'} />
                         <label htmlFor="move4power">Power</label>

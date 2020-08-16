@@ -1,14 +1,16 @@
 import axios from 'axios';
 
+const serverURL = 'https://hackschool-fa20-test-server.herokuapp.com';
+
 export default {
     getPokemonName: function () {
-        return axios.get('https://hackschool-fa20-test-server.herokuapp.com/api/pokemonName');
+        return axios.get(`${serverURL}/api/pokemonName`);
     },
 
     createPokemon: function (payload) {
         const config = {
             method: 'post',
-            url: '/api/pokemon',
+            url: `${serverURL}/api/pokemon`,
             data: {
                 name: payload.name,
                 description: payload.desc,
