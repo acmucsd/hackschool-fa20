@@ -1,0 +1,20 @@
+.navbar {
+    background-color: #BF4141;
+    border-bottom: 15px solid black;
+    color: #FFF;
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .title {
+    margin: auto 16px;
+}
+
+.nav-buttons a {
+    color: #FFF;
+    font-size: 18px;
+    margin-right: 32px;
+    text-decoration: none;
+}
