@@ -7,6 +7,14 @@ export default {
         return axios.get(`${serverURL}/api/pokemonName`);
     },
 
+    getPokemon: function() {
+        return axios.get(`${serverURL}/api/pokemon`);
+    },
+
+    getPokemonByID: function(id) {
+        return axios.get(`${serverURL}/api/pokemon/${id}`);
+    },
+
     createPokemon: function (payload) {
         const config = {
             method: 'post',
