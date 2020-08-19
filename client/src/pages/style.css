@@ -23,3 +23,35 @@
 .pokemon-empty-result-inner a:visited {
     color: #BFBF41;
 }
+
+label {
+    margin: 0 5px;
+}
+
+.create-page {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 25px;
+}
+
+.drawing {
+    width: 35%;
+}
+
+.canvas {
+    border: 1px solid black;
+    height: 600px;
+    margin: auto;
+}
+
+.color-picker {
+    display: flex;
+    justify-content: center;
+}
+
+.pokemon-form {
+    border: 1px solid black;
+    padding: 20px;
+    width: 35%;
+}
