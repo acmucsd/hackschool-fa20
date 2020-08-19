@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import PokemonCard from '../../components/PokemonCard/PokemonCard';
+import PokemonCard from '../components/PokemonCard/PokemonCard';
+import Navbar from '../components/Navbar';
 // TODO: Uncomment the two lines below after merging with Henry's branch
 // import Navbar from '../../components/Navbar/index';
 // import API from '../../API';
 
 // TODO: Remove the below line once merged with Henry's branch
-import pokemons from '../../data/pokemon-data.json';
-import '../style.css';
+import pokemons from '../data/pokemon-data.json';
+import './style.css';
 
 
 const ViewPokemons = () => {
@@ -61,6 +62,8 @@ const ViewPokemons = () => {
 
     return (
         <div>
+            <Navbar/>
+            <h2 className="view-pokemons-header">All Pokemons</h2>
             <div className="pokemon-filter">
                 <label htmlFor="type">Filter by type:{'\u00A0'}</label>
                 <select id="type" name="type" onChange={handleTypeChange}>

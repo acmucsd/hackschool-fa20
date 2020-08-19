@@ -1,7 +1,7 @@
 {
     "pokemons": [
         {
-            "image": "https://cdn.gamer-network.net/2019/usgamer/Pokemon-Sword-and-Shield-Pikachu-Screenshot.jpg/EG11/thumbnail/1920x1080/format/jpg/quality/65/pokemon-sword-and-shield-gives-you-an-up-close-look-at-a-pikachu-squirming-against-its-inevitable-end.jpg",
+            "image": "https://img.pokemondb.net/artwork/large/pikachu-lets-go.jpg",
             "name": "Foo Bar",
             "desc": "Please don't be traumatized by my name, I'm friendly",
             "type1": "Fairy",
@@ -20,7 +20,7 @@
             ]
         },
         {
-            "image": "https://cdn.gamer-network.net/2019/usgamer/Pokemon-Sword-and-Shield-Pikachu-Screenshot.jpg/EG11/thumbnail/1920x1080/format/jpg/quality/65/pokemon-sword-and-shield-gives-you-an-up-close-look-at-a-pikachu-squirming-against-its-inevitable-end.jpg",
+            "image": "https://img.pokemondb.net/artwork/large/pikachu-lets-go.jpg",
             "name": "Nullpointer",
             "desc": "Please don't be traumatized by my name, I'm friendly",
             "type1": "Bug",
@@ -39,7 +39,7 @@
             ]
         },
         {
-            "image": "https://cdn.gamer-network.net/2019/usgamer/Pokemon-Sword-and-Shield-Pikachu-Screenshot.jpg/EG11/thumbnail/1920x1080/format/jpg/quality/65/pokemon-sword-and-shield-gives-you-an-up-close-look-at-a-pikachu-squirming-against-its-inevitable-end.jpg",
+            "image": "https://img.pokemondb.net/artwork/large/pikachu-lets-go.jpg",
             "name": "Seg Fault",
             "desc": "Please don't be traumatized by my name, I'm friendly",
             "type1": "Psychic",

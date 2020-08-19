@@ -5,7 +5,7 @@
     border-radius: 5px;
     border-width: 2px;
     box-shadow: 2% 4vh 10px #222222;
-    width: 22vw;
+    width: 40vw;
     height: 45vh;
     min-width: 200px;
     min-height: 240px;
@@ -13,23 +13,27 @@
     overflow-y: scroll;
 }
 
+.pokemon-card-container-inner {
+    display: flex;
+}
+
 /* Hide scrollbar for Chrome, Safari and Opera */
-/*.pokemon-card-container::-webkit-scrollbar {
+.pokemon-card-container::-webkit-scrollbar {
   display: none;
-}*/
+}
 
 /* Hide scrollbar for IE, Edge and Firefox */
-/* .pokemon-card-container {
+.pokemon-card-container {
   -ms-overflow-style: none;
   scrollbar-width: none; 
-} */
+}
 
 .pokemon-card-container p {
     margin: 0.5em;
 }
 
 .pokemon-photo {
-    max-width: 100%;
+    max-height: 45vh;
     border-radius: 4px 4px 0 0;
 }
 
