@@ -22,7 +22,7 @@ async function findById(id) {
  */
 async function generateName() {
   const response = await axios.get(config.rng_url);
-  return response.data;
+  return response.data[0];
 }
 
 /**
@@ -30,7 +30,7 @@ async function generateName() {
  * @param {Pokemon} pokemon 
  */
 async function createPokemon(pokemon) {
-  Pokemon.create(pokemon)
+  return Pokemon.create(pokemon);
 }
 
 module.exports = {
@@ -38,4 +38,4 @@ module.exports = {
   findById,
   generateName,
   createPokemon
-}
+};

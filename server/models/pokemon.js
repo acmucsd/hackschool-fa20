@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
+const MoveSchema = require('./move');
 
-const pokemonSchema = mongoose.Schema(
+const PokemonSchema = new mongoose.Schema(
   {
     name: {
       type: String,
@@ -11,7 +12,7 @@ const pokemonSchema = mongoose.Schema(
       require: true,
     },
     image: {
-      type: Buffer,
+      type: String,
       required: true,
     },
     type1: {
@@ -22,39 +23,14 @@ const pokemonSchema = mongoose.Schema(
       type: String,
       required: false,
     },
-    userId: {
-      type: Number,
-      required: false,
-    },
     moves: {
-      type: [Move]
-    }
+      type: [MoveSchema],
+      required: true,
+    },
   }
 );
 
-const moveSchema = mongoose.Schema(
-  {
-    type: {
-      type: String,
-      required: true,
-    },
-    name: {
-      type: String,
-      required: true,
-    },
-    description: {
-      type: String,
-      required: true,
-    },
-    power: {
-      type: Number,
-      required: true,
-    }
-  }
-)
-
-const Pokemon = mongoose.model('Pokemon', pokemonSchema);
-const Move = mongoose.model('Move', moveSchema);
+const Pokemon = mongoose.model('Pokemon', PokemonSchema);
 
 module.exports = Pokemon;
 
