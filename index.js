@@ -1,10 +1,12 @@
 const express = require('express');
 const config = require('./server/config');
 const mongoose = require('mongoose');
+const cors = require('cors');
 const server = express();
 
 server.use(express.urlencoded({ extended: true }));
 server.use(express.json());
+server.use(cors());
 
 server.use('/api', require('./server/api'));
 
