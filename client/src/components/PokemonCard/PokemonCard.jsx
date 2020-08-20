@@ -75,7 +75,7 @@ const PokemonCard = (props) => {
     return (
         <div className="pokemon-card-container">
             <div className="pokemon-card-container-inner">
-                <CanvasDraw
+                <CanvasDraw className="pokemon-photo"
                  disabled
                  hideGrid
                  saveData={props.image}

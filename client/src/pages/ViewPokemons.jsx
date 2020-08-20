@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import PokemonCard from '../components/PokemonCard/PokemonCard';
 import Navbar from '../components/Navbar';
 import API from '../API';
-import pokemons from '../data/pokemon-data.json';
 import './style.css';
 
 
@@ -11,7 +10,7 @@ const ViewPokemons = () => {
     const [filter, setFilter] = useState("All");
     const [body, setBody] = useState([]);
 
-    // Probably looks like this or something lol please change if it's wrong
+    /* Loads the current list of pokemons */
     useEffect(() => {
        API.getPokemon()
        .then((response) => {
@@ -19,8 +18,9 @@ const ViewPokemons = () => {
        })
     }, []);
 
-    let renderedPokemons = false;
+    let renderedPokemons = false; // Keeps track of whether we managed to render a pokemon
 
+    /* Renders the list of pokemon that matches the current filter */
     const currentPokemons = body.map((pokemon) => {
         const appears = filter === "All" || pokemon.type1 === filter || pokemon.type2 === filter;
         if (appears) { renderedPokemons = true; }
@@ -28,22 +28,24 @@ const ViewPokemons = () => {
             description={pokemon.description} type1={pokemon.type1} type2={pokemon.type2} moves={pokemon.moves} />);
     })
 
+    /* Changes the filter */
     const handleTypeChange = (event) => {
         setFilter(event.target.value);
     }
 
-    /* TODO: Once routing is done, replace the link with a link to the Create Pokemon page*/
+    /* Renders a notice if there is no pokemon matching the filter type */
     const emptyList = () => {
         return (
             <div className="pokemon-empty-result">
                 <div className="pokemon-empty-result-inner">
                 <p>No pokemons with the corresponding type found :(</p>
-                <p>Try changing the filter, or create a pokemon <a href="/">here</a></p>
+                <p>Try changing the filter, or create a pokemon <a href="/create">here</a></p>
                 </div>
             </div>
         );
     }
 
+    /* Renders currentPokemons, or emptyList, depending on whether we returned pokemons */
     const listBody = () => {
         return renderedPokemons ? currentPokemons : emptyList();
     }

@@ -3,7 +3,7 @@ import './style.css';
 
 const Move = (props) => {
 
-    /* Changes font color based on the pokemon type */
+    /* Changes background color based on the pokemon type */
     const getStyle = (type) => {
         switch(type) {
             case null:
