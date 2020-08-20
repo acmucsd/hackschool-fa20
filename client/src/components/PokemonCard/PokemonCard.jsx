@@ -1,6 +1,7 @@
 import React from 'react';
 import Move from '../Move/Move';
 import './style.css';
+import CanvasDraw from 'react-canvas-draw';
 
 const PokemonCard = (props) => {
 
@@ -9,55 +10,64 @@ const PokemonCard = (props) => {
         switch (type) {
             case null:
                 return {};
-            case "normal":
+            case "Normal":
                 return { color: "" };
-            case "fire":
+            case "Fire":
                 return { color: "#ff00ff" };
-            case "water":
+            case "Water":
                 return { color: "#0000ff" };
-            case "grass":
+            case "Grass":
                 return { color: "#00ff00" };
-            case "electric":
+            case "Electric":
                 return { color: "#ffff00" };
-            case "psychic":
+            case "Psychic":
                 return { color: "#ff00ff" };
-            case "ice":
+            case "Ice":
                 return { color: "#99ccff" };
-            case "dragon":
+            case "Dragon":
                 return { color: "#ff9933" };
-            case "dark":
+            case "Dark":
                 return { color: "#cc0099" };
-            case "fairy":
+            case "Fairy":
                 return { color: "#ff99cc" };
-            case "fighting":
+            case "Fighting":
                 return { color: "#cc3300" };
-            case "flying":
+            case "Flying":
                 return { color: "#66ccff" };
-            case "poison":
+            case "Poison":
                 return { color: "#cc99ff" };
-            case "ground":
+            case "Ground":
                 return { color: " #cc7400" };
-            case "rock":
+            case "Rock":
                 return { color: " #666699" };
-            case "bug":
+            case "Bug":
                 return { color: " #339933" };
-            case "ghost":
+            case "Ghost":
                 return { color: " #cccccc" };
-            case "steel":
+            case "Steel":
                 return { color: " #999999" };
             default:
                 return {};
         }
     }
 
+    /* Capitalizes the first letter of the type, might remove later */
+    const capitalize = (str) => {
+        if(str === ""){return "";}
+        return str.charAt(0).toUpperCase() + str.slice(1);
+    }
+
+    /* Displays all moves by the pokemon */
     let pokemonMoves = props.moves.map((move) => {
-        return <Move name={move.name} type={move.type} power={move.power} />
+        return <Move name={move.name} type={capitalize(move.type)} power={move.power} />
     })
 
+    /* Indicate that the current pokemon doesn't have a move */
     const noMoves = () => {
         return <tr>This Pokemon has no moves :(</tr>;
     }
 
+    /* Displays pokemonMoves or noMoves, depending on whether the pokemon's moves are empty */
     let movesSection = () => {
         return props.moves.length === 0 ? noMoves() : pokemonMoves;
     }
@@ -65,13 +75,17 @@ const PokemonCard = (props) => {
     return (
         <div className="pokemon-card-container">
             <div className="pokemon-card-container-inner">
-                <img className="pokemon-photo" src={props.image} alt="Oh no! Pokemon photo failed to load :(" />
+                <CanvasDraw
+                 disabled
+                 hideGrid
+                 saveData={props.image}
+                />
                 <div>
                     <p className="pokemoncard-name"> {props.name}</p>
                     <p className="pokemon-description">{props.description}</p>
                     <p className="pokemon-types">
-                        <span className="pokemon-type-1" style={getStyle(props.type1)}>{props.type1}</span> {'\u00A0'}
-                        <span className="pokemon-type-2" style={getStyle(props.type2)}>{props.type2}</span>
+                        <span className="pokemon-type-1" style={getStyle(capitalize(props.type1))}>{capitalize(props.type1)}</span> {'\u00A0'}
+                        <span className="pokemon-type-2" style={getStyle(capitalize(props.type2))}>{capitalize(props.type2)}</span>
                     </p>
                     <p className="pokemoncard-bold">Moves: </p>
                     <table className="moves-table">

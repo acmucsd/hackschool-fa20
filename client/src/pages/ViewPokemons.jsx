@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react';
 import PokemonCard from '../components/PokemonCard/PokemonCard';
 import Navbar from '../components/Navbar';
 import API from '../API';
-
-// TODO: Remove the below line once merged with Henry's branch
 import pokemons from '../data/pokemon-data.json';
 import './style.css';
 
@@ -14,19 +12,12 @@ const ViewPokemons = () => {
     const [body, setBody] = useState([]);
 
     // Probably looks like this or something lol please change if it's wrong
-    // let pokemonList = null;
     useEffect(() => {
        API.getPokemon()
        .then((response) => {
-           console.log("response:" + JSON.stringify(response));
            setBody(response.data);
        })
     }, []);
-
-
-    // TODO: Replace code about hard-coded data once API is done
-    //const pokemonList = pokemons.pokemons;
-    //const [body, setBody] = useState(pokemonList);
 
     let renderedPokemons = false;
 
@@ -40,10 +31,6 @@ const ViewPokemons = () => {
     const handleTypeChange = (event) => {
         setFilter(event.target.value);
     }
-
-    /*useEffect(() => {
-        setBody(pokemonList);
-    }, [])*/
 
     /* TODO: Once routing is done, replace the link with a link to the Create Pokemon page*/
     const emptyList = () => {
