@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PokemonCard from '../components/PokemonCard/PokemonCard';
 import Navbar from '../components/Navbar';
-// TODO: Uncomment the two lines below after merging with Henry's branch
-// import Navbar from '../../components/Navbar/index';
-// import API from '../../API';
+import API from '../API';
 
 // TODO: Remove the below line once merged with Henry's branch
 import pokemons from '../data/pokemon-data.json';
@@ -13,19 +11,22 @@ import './style.css';
 const ViewPokemons = () => {
 
     const [filter, setFilter] = useState("All");
+    const [body, setBody] = useState([]);
 
     // Probably looks like this or something lol please change if it's wrong
-    /* const pokemonList;
-       useEffect(() => {
-       API.getAllPokemons()
+    // let pokemonList = null;
+    useEffect(() => {
+       API.getPokemon()
        .then((response) => {
-           pokemonList = response;
+           console.log("response:" + JSON.stringify(response));
+           setBody(response.data);
        })
-    }, []) */
+    }, []);
+
 
     // TODO: Replace code about hard-coded data once API is done
-    const pokemonList = pokemons.pokemons;
-    const [body, setBody] = useState(pokemonList);
+    //const pokemonList = pokemons.pokemons;
+    //const [body, setBody] = useState(pokemonList);
 
     let renderedPokemons = false;
 
@@ -33,16 +34,16 @@ const ViewPokemons = () => {
         const appears = filter === "All" || pokemon.type1 === filter || pokemon.type2 === filter;
         if (appears) { renderedPokemons = true; }
         return (appears && <PokemonCard image={pokemon.image} name={pokemon.name}
-            desc={pokemon.desc} type1={pokemon.type1} type2={pokemon.type2} moves={pokemon.moves} />);
+            description={pokemon.description} type1={pokemon.type1} type2={pokemon.type2} moves={pokemon.moves} />);
     })
 
     const handleTypeChange = (event) => {
         setFilter(event.target.value);
     }
 
-    useEffect(() => {
+    /*useEffect(() => {
         setBody(pokemonList);
-    }, [])
+    }, [])*/
 
     /* TODO: Once routing is done, replace the link with a link to the Create Pokemon page*/
     const emptyList = () => {
@@ -68,24 +69,24 @@ const ViewPokemons = () => {
                 <label htmlFor="type">Filter by type:{'\u00A0'}</label>
                 <select id="type" name="type" onChange={handleTypeChange}>
                     <option value="All">All</option>
-                    <option value="Normal">Normal</option>
-                    <option value="Fire">Fire</option>
-                    <option value="Water">Water</option>
-                    <option value="Grass">Grass</option>
-                    <option value="Electric">Electric</option>
-                    <option value="Psychic">Psychic</option>
-                    <option value="Ice">Ice</option>
-                    <option value="Dragon">Dragon</option>
-                    <option value="Dark">Dark</option>
-                    <option value="Fairy">Fairy</option>
-                    <option value="Fighting">Fighting</option>
-                    <option value="Flying">Flying</option>
-                    <option value="Poison">Poison</option>
-                    <option value="Ground">Ground</option>
-                    <option value="Rock">Rock</option>
-                    <option value="Bug">Bug</option>
-                    <option value="Ghost">Ghost</option>
-                    <option value="Steel">Steel</option>
+                    <option value="normal">Normal</option>
+                    <option value="fire">Fire</option>
+                    <option value="water">Water</option>
+                    <option value="grass">Grass</option>
+                    <option value="electric">Electric</option>
+                    <option value="psychic">Psychic</option>
+                    <option value="ice">Ice</option>
+                    <option value="dragon">Dragon</option>
+                    <option value="dark">Dark</option>
+                    <option value="fairy">Fairy</option>
+                    <option value="fighting">Fighting</option>
+                    <option value="flying">Flying</option>
+                    <option value="poison">Poison</option>
+                    <option value="ground">Ground</option>
+                    <option value="rock">Rock</option>
+                    <option value="bug">Bug</option>
+                    <option value="ghost">Ghost</option>
+                    <option value="steel">Steel</option>
                 </select>
             </div>
             <br />

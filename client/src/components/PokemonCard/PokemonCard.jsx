@@ -9,41 +9,41 @@ const PokemonCard = (props) => {
         switch (type) {
             case null:
                 return {};
-            case "Normal":
+            case "normal":
                 return { color: "" };
-            case "Fire":
+            case "fire":
                 return { color: "#ff00ff" };
-            case "Water":
+            case "water":
                 return { color: "#0000ff" };
-            case "Grass":
+            case "grass":
                 return { color: "#00ff00" };
-            case "Electric":
+            case "electric":
                 return { color: "#ffff00" };
-            case "Psychic":
+            case "psychic":
                 return { color: "#ff00ff" };
-            case "Ice":
+            case "ice":
                 return { color: "#99ccff" };
-            case "Dragon":
+            case "dragon":
                 return { color: "#ff9933" };
-            case "Dark":
+            case "dark":
                 return { color: "#cc0099" };
-            case "Fairy":
+            case "fairy":
                 return { color: "#ff99cc" };
-            case "Fighting":
+            case "fighting":
                 return { color: "#cc3300" };
-            case "Flying":
+            case "flying":
                 return { color: "#66ccff" };
-            case "Poison":
+            case "poison":
                 return { color: "#cc99ff" };
-            case "Ground":
+            case "ground":
                 return { color: " #cc7400" };
-            case "Rock":
+            case "rock":
                 return { color: " #666699" };
-            case "Bug":
+            case "bug":
                 return { color: " #339933" };
-            case "Ghost":
+            case "ghost":
                 return { color: " #cccccc" };
-            case "Steel":
+            case "steel":
                 return { color: " #999999" };
             default:
                 return {};
@@ -68,7 +68,7 @@ const PokemonCard = (props) => {
                 <img className="pokemon-photo" src={props.image} alt="Oh no! Pokemon photo failed to load :(" />
                 <div>
                     <p className="pokemoncard-name"> {props.name}</p>
-                    <p className="pokemon-description">{props.desc}</p>
+                    <p className="pokemon-description">{props.description}</p>
                     <p className="pokemon-types">
                         <span className="pokemon-type-1" style={getStyle(props.type1)}>{props.type1}</span> {'\u00A0'}
                         <span className="pokemon-type-2" style={getStyle(props.type2)}>{props.type2}</span>

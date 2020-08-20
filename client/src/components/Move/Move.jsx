@@ -8,41 +8,41 @@ const Move = (props) => {
         switch(type) {
             case null:
                 return {};
-            case "Normal":
+            case "normal":
                 return {"background-color": "#ffffcc"};
-            case "Fire":
+            case "fire":
                 return {"background-color": "#ff00ff"};
-            case "Water":
+            case "water":
                 return {"background-color": "#0000ff"};
-            case "Grass":
+            case "grass":
                 return {"background-color": "#00ff00"};
-            case "Electric":
+            case "electric":
                 return {"background-color": "#ffff00"};
-            case "Psychic":
+            case "psychic":
                 return {"background-color": "#ff00ff", color: "white"};
-            case "Ice":
+            case "ice":
                 return {"background-color": "#99ccff"};
-            case "Dragon":
+            case "dragon":
                 return {"background-color": "#ff9933"};
-            case "Dark":
+            case "dark":
                 return {"background-color": "#cc0099", color: "white"};
-            case "Fairy":
+            case "fairy":
                 return {"background-color": "#ff99cc"};
-            case "Fighting":
+            case "fighting":
                 return {"background-color": "#cc3300", color: "white"};
-            case "Flying":
+            case "flying":
                 return {"background-color": "#66ccff"};
-            case "Poison":
+            case "poison":
                 return {"background-color": "#cc99ff"};
-            case "Ground":
+            case "ground":
                 return {"background-color": " #cc7400"};
-            case "Rock":
+            case "rock":
                 return {"background-color": " #666699"};
-            case "Bug":
+            case "bug":
                 return {"background-color": " #339933"};
-            case "Ghost":
+            case "ghost":
                 return {"background-color": " #cccccc"};
-            case "Steel":
+            case "steel":
                 return {"background-color": " #999999"};
             default:
                 return {};
