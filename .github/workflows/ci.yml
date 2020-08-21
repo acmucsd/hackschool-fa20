@@ -1,0 +1,27 @@
+name: CI
+
+on: pull_request
+
+jobs:
+    install-and-test:
+        runs-on: ubuntu-latest
+
+        steps:
+            - uses: actions/checkout@v2
+            - uses: actions/setup-node@v1
+              with: 
+                node-version: '14'
+                check-latest: true
+                
+            - name: set many environment variables
+              uses: allenevans/set-env@v1.0.0
+              with:
+                PORT: ${{ secrets.PORT }}
+                DATABASE_URL: ${{ secrets.DATABASE_URL }}
+                RNG_URL: ${{ secrets.RNG_URL }}
+
+            - name: Install modules
+              run: npm install
+
+            - name: Run tests
+              run: npm test
