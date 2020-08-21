@@ -5,16 +5,18 @@ import API from '../API';
 import './style.css';
 
 
-const ViewPokemons = () => {
+const ViewPokemon = () => {
 
     const [filter, setFilter] = useState("All");
     const [body, setBody] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     /* Loads the current list of pokemons */
     useEffect(() => {
        API.getPokemon()
        .then((response) => {
-           setBody(response.data);
+           setBody(response.data.pokemon);
+           setLoading(false);
        })
     }, []);
 
@@ -47,6 +49,15 @@ const ViewPokemons = () => {
 
     /* Renders currentPokemons, or emptyList, depending on whether we returned pokemons */
     const listBody = () => {
+        if(loading){
+            return(
+                <div className="pokemon-empty-result">
+                    <div className="pokemon-empty-result-inner">
+                        <p>Loading...</p>
+                    </div>
+                </div>
+            );
+        }
         return renderedPokemons ? currentPokemons : emptyList();
     }
 
@@ -85,4 +96,4 @@ const ViewPokemons = () => {
     );
 }
 
-export default ViewPokemons;
+export default ViewPokemon;

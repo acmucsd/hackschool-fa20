@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
 import CreatePokemon from './pages/CreatePokemon';
-import ViewPokemons from './pages/ViewPokemons';
+import ViewPokemon from './pages/ViewPokemon';
 
 const App = () => {
   return (
@@ -11,7 +11,7 @@ const App = () => {
         <Switch>
           <Redirect from="/" exact to="/create" />
           <Route exact path="/create" component={CreatePokemon} />
-          <Route exact path="/view" component={ViewPokemons} />
+          <Route exact path="/view" component={ViewPokemon} />
         </Switch>
       </div>
     </Router>

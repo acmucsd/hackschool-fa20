@@ -5,50 +5,32 @@ import CanvasDraw from 'react-canvas-draw';
 
 const PokemonCard = (props) => {
 
+    /* Color object to display different colors for each type */
+    const colors = {
+        Normal: "#555555",
+        Fire: "#ff00ff",
+        Water: "#0000ff",
+        Grass: "#00ff00",
+        Electric: "#ffff00",
+        Psychic: "#ff00ff",
+        Ice: "#99ccff",
+        Dragon: "#ff9933",
+        Dark: "#cc0099",
+        Fairy: "#ff99cc",
+        Fighting: "#cc3300",
+        Flying: "#66ccff",
+        Posion: "#cc99ff",
+        Ground: "#cc7400",
+        Rock: "666699",
+        Bug: "#339933",
+        Ghost: "#cccccc",
+        Steel: "#999999"
+    };
+
     /* Changes font color based on the pokemon type */
     const getStyle = (type) => {
-        switch (type) {
-            case null:
-                return {};
-            case "Normal":
-                return { color: "" };
-            case "Fire":
-                return { color: "#ff00ff" };
-            case "Water":
-                return { color: "#0000ff" };
-            case "Grass":
-                return { color: "#00ff00" };
-            case "Electric":
-                return { color: "#ffff00" };
-            case "Psychic":
-                return { color: "#ff00ff" };
-            case "Ice":
-                return { color: "#99ccff" };
-            case "Dragon":
-                return { color: "#ff9933" };
-            case "Dark":
-                return { color: "#cc0099" };
-            case "Fairy":
-                return { color: "#ff99cc" };
-            case "Fighting":
-                return { color: "#cc3300" };
-            case "Flying":
-                return { color: "#66ccff" };
-            case "Poison":
-                return { color: "#cc99ff" };
-            case "Ground":
-                return { color: " #cc7400" };
-            case "Rock":
-                return { color: " #666699" };
-            case "Bug":
-                return { color: " #339933" };
-            case "Ghost":
-                return { color: " #cccccc" };
-            case "Steel":
-                return { color: " #999999" };
-            default:
-                return {};
-        }
+        if(type == null){return {};}
+        return {color: colors[type]};
     }
 
     /* Capitalizes the first letter of the type, might remove later */

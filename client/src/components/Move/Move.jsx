@@ -3,50 +3,36 @@ import './style.css';
 
 const Move = (props) => {
 
-    /* Changes background color based on the pokemon type */
+    /* Color object to display different colors for each type */
+    const colors = {
+        Normal: "#ffffcc",
+        Fire: "#ff00ff",
+        Water: "#0000ff",
+        Grass: "#00ff00",
+        Electric: "#ffff00",
+        Psychic: "#ff00ff",
+        Ice: "#99ccff",
+        Dragon: "#ff9933",
+        Dark: "#cc0099",
+        Fairy: "#ff99cc",
+        Fighting: "#cc3300",
+        Flying: "#66ccff",
+        Posion: "#cc99ff",
+        Ground: "#cc7400",
+        Rock: "666699",
+        Bug: "#339933",
+        Ghost: "#cccccc",
+        Steel: "#999999"
+    };
+
+    /* Changes background color based on the pokemon type 
+     Pyschic, Dark, and Fighting types have white fonts for display reasons */
     const getStyle = (type) => {
-        switch(type) {
-            case null:
-                return {};
-            case "Normal":
-                return {"background-color": "#ffffcc"};
-            case "Fire":
-                return {"background-color": "#ff00ff"};
-            case "Water":
-                return {"background-color": "#0000ff"};
-            case "Grass":
-                return {"background-color": "#00ff00"};
-            case "Electric":
-                return {"background-color": "#ffff00"};
-            case "Psychic":
-                return {"background-color": "#ff00ff", color: "white"};
-            case "Ice":
-                return {"background-color": "#99ccff"};
-            case "Dragon":
-                return {"background-color": "#ff9933"};
-            case "Dark":
-                return {"background-color": "#cc0099", color: "white"};
-            case "Fairy":
-                return {"background-color": "#ff99cc"};
-            case "Fighting":
-                return {"background-color": "#cc3300", color: "white"};
-            case "Flying":
-                return {"background-color": "#66ccff"};
-            case "Poison":
-                return {"background-color": "#cc99ff"};
-            case "Ground":
-                return {"background-color": " #cc7400"};
-            case "Rock":
-                return {"background-color": " #666699"};
-            case "Bug":
-                return {"background-color": " #339933"};
-            case "Ghost":
-                return {"background-color": " #cccccc"};
-            case "Steel":
-                return {"background-color": " #999999"};
-            default:
-                return {};
+        if(type === null){return {};}
+        if(type === 'Psychic' || type === 'Dark' || type === 'Fighting'){
+            return {backgroundColor: colors[type], color: "white"};
         }
+        return {backgroundColor:colors[type]};
     }
 
     return(
