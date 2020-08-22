@@ -5,7 +5,6 @@ import CanvasDraw from 'react-canvas-draw';
 
 const PokemonCard = (props) => {
 
-    const[loaded, setLoaded] = useState(false);
     const loadableCanvas = useRef();
 
     /* Color object to display different colors for each type */
@@ -36,15 +35,9 @@ const PokemonCard = (props) => {
         return {color: colors[type]};
     }
 
-    /* Capitalizes the first letter of the type, might remove later */
-    const capitalize = (str) => {
-        if(str === ""){return "";}
-        return str.charAt(0).toUpperCase() + str.slice(1);
-    }
-
     /* Displays all moves by the pokemon */
     let pokemonMoves = props.moves.map((move) => {
-        return <Move name={move.name} type={capitalize(move.type)} power={move.power} />
+        return <Move name={move.name} type={move.type} power={move.power} />
     })
 
     /* Indicate that the current pokemon doesn't have a move */
@@ -60,13 +53,12 @@ const PokemonCard = (props) => {
     useEffect(() => {
         if(loadableCanvas.current == null){return;}
         loadableCanvas.current.loadSaveData(props.image);
-        console.log(loadableCanvas.current.width);
     },[props.image]);
 
     return (
         <div className="pokemon-card-container">
             <div className="pokemon-card-container-inner">
-                <CanvasDraw className="pokemon-photo"
+                <CanvasDraw
                  disabled
                  hideGrid
                  ref={loadableCanvas}
@@ -78,8 +70,8 @@ const PokemonCard = (props) => {
                     <p className="pokemoncard-name"> {props.name}</p>
                     <p className="pokemon-description">{props.description}</p>
                     <p className="pokemon-types">
-                        <span className="pokemon-type-1" style={getStyle(capitalize(props.type1))}>{capitalize(props.type1)}</span> {'\u00A0'}
-                        <span className="pokemon-type-2" style={getStyle(capitalize(props.type2))}>{capitalize(props.type2)}</span>
+                        <span className="pokemon-type-1" style={getStyle(props.type1)}>{props.type1}</span> {'\u00A0'}
+                        <span className="pokemon-type-2" style={getStyle(props.type2)}>{props.type2}</span>
                     </p>
                     <p className="pokemoncard-bold">Moves: </p>
                     <table className="moves-table">
