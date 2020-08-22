@@ -10,10 +10,6 @@ const MoveSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    description: {
-      type: String,
-      required: true,
-    },
     power: {
       type: Number,
       required: true,
