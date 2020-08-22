@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const serverURL = 'http://localhost:8000';
+const serverURL = 'https://hackschool-fa20-test-server.herokuapp.com';
 
 export default {
     getPokemonName: function () {

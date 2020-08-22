@@ -1,11 +1,14 @@
 import React, { useState, useRef } from 'react';
 import CanvasDraw from 'react-canvas-draw';
+import  { useHistory } from 'react-router-dom';
+
 import './style.css';
 import API from '../API';
 import Navbar from '../components/Navbar';
 import Type from '../components/Type';
 
 const CreatePokemon = () => {
+    let history = useHistory();
     const [name, setName] = useState('');
     const [color, setColor] = useState('#000');
     const canvasInput = useRef();
@@ -46,7 +49,7 @@ const CreatePokemon = () => {
             ]
         };
         await API.createPokemon(payload);
-        // TODO: Navigate to View Pokemon page
+        history.push("/view");
     };
 
     /**

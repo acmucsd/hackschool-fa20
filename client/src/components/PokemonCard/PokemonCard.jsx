@@ -1,4 +1,4 @@
-import React, {useEffect, useState,useRef} from 'react';
+import React, {useEffect,useRef} from 'react';
 import Move from '../Move/Move';
 import './style.css';
 import CanvasDraw from 'react-canvas-draw';
