@@ -1,9 +1,12 @@
-import React from 'react';
+import React, {useEffect, useState,useRef} from 'react';
 import Move from '../Move/Move';
 import './style.css';
 import CanvasDraw from 'react-canvas-draw';
 
 const PokemonCard = (props) => {
+
+    const[loaded, setLoaded] = useState(false);
+    const loadableCanvas = useRef();
 
     /* Color object to display different colors for each type */
     const colors = {
@@ -54,13 +57,22 @@ const PokemonCard = (props) => {
         return props.moves.length === 0 ? noMoves() : pokemonMoves;
     }
 
+    useEffect(() => {
+        if(loadableCanvas.current == null){return;}
+        loadableCanvas.current.loadSaveData(props.image);
+        console.log(loadableCanvas.current.width);
+    },[props.image]);
+
     return (
         <div className="pokemon-card-container">
             <div className="pokemon-card-container-inner">
                 <CanvasDraw className="pokemon-photo"
                  disabled
                  hideGrid
+                 ref={loadableCanvas}
                  saveData={props.image}
+                 canvasWidth="45vh"
+                 canvasHeight="45vh"
                 />
                 <div>
                     <p className="pokemoncard-name"> {props.name}</p>
