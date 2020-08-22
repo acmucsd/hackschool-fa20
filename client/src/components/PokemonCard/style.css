@@ -37,6 +37,11 @@
     border-radius: 4px 4px 0 0;
 }
 
+.pokemoncard-data-container {
+    min-width: 20vw;
+    max-width: 20vw;
+}
+
 .pokemoncard-name {
     font-size: 20px;
     font-weight: bold;

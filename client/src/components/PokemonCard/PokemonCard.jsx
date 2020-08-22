@@ -66,7 +66,7 @@ const PokemonCard = (props) => {
                  canvasWidth="45vh"
                  canvasHeight="45vh"
                 />
-                <div>
+                <div className="pokemoncard-data-container">
                     <p className="pokemoncard-name"> {props.name}</p>
                     <p className="pokemon-description">{props.description}</p>
                     <p className="pokemon-types">
