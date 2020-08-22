@@ -13,39 +13,40 @@ const CreatePokemon = () => {
     /**
      * Method to handle the creation of a Pokemon on form submit.
      */
-    const handleCreatePokemon = (e) => {
+    const handleCreatePokemon = async (e) => {
         e.preventDefault();
-
+        const req = e.target;
         const payload = {
-            name: e.target.name.value,
-            desc: e.target.desc.value,
+            name: req.name.value,
+            desc: req.desc.value,
             image: canvasInput.current.getSaveData(),
-            type1: e.target.type1.value,
-            type2: e.target.type2.value,
+            type1: req.type1.value,
+            type2: req.type2.value,
             moves: [
                 {
-                    name: e.target.move1.value,
-                    type: e.target.move1type.value,
-                    power: e.target.move1power.value
+                    name: req.move1.value,
+                    type: req.move1type.value,
+                    power: req.move1power.value
                 },
                 {
-                    name: e.target.move2.value,
-                    type: e.target.move2type.value,
-                    power: e.target.move2power.value
+                    name: req.move2.value,
+                    type: req.move2type.value,
+                    power: req.move2power.value
                 },
                 {
-                    name: e.target.move3.value,
-                    type: e.target.move3type.value,
-                    power: e.target.move3power.value
+                    name: req.move3.value,
+                    type: req.move3type.value,
+                    power: req.move3power.value
                 },
                 {
-                    name: e.target.move4.value,
-                    type: e.target.move4type.value,
-                    power: e.target.move4power.value
+                    name: req.move4.value,
+                    type: req.move4type.value,
+                    power: req.move4power.value
                 }
             ]
         };
-        API.createPokemon(payload);
+        await API.createPokemon(payload);
+        // TODO: Navigate to View Pokemon page
     };
 
     /**
