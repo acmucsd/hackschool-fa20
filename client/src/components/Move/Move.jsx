@@ -36,11 +36,13 @@ const Move = (props) => {
     }
 
     return(
-        <tr className="pokemon-move">
-            <td><span className="move-type" style={getStyle(props.type)}>{props.type}</span></td>
-            <td><strong>{props.name}</strong></td>
-            <td>Power: {props.power}</td>
-        </tr>
+        <tbody>
+            <tr className="pokemon-move">
+                <td><span className="move-type" style={getStyle(props.type)}>{props.type}</span></td>
+                <td><strong>{props.name}</strong></td>
+                <td>Power: {props.power}</td>
+            </tr>
+        </tbody>
     );
 }
 

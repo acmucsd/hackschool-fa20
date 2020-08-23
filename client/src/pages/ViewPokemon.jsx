@@ -23,10 +23,10 @@ const ViewPokemon = () => {
     let renderedPokemons = false; // Keeps track of whether we managed to render a pokemon
 
     /* Renders the list of pokemon that matches the current filter */
-    const currentPokemons = body.map((pokemon) => {
+    const currentPokemons = body.map((pokemon, i) => {
         const appears = filter === "All" || pokemon.type1 === filter || pokemon.type2 === filter;
         if (appears) { renderedPokemons = true; }
-        return (appears && <PokemonCard image={pokemon.image} name={pokemon.name}
+        return (appears && <PokemonCard key={i} image={pokemon.image} name={pokemon.name}
             description={pokemon.description} type1={pokemon.type1} type2={pokemon.type2} moves={pokemon.moves} />);
     })
 
