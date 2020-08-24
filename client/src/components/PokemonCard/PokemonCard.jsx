@@ -37,13 +37,13 @@ const PokemonCard = (props) => {
     }
 
     /* Displays all moves by the pokemon */
-    let pokemonMoves = props.moves.map((move) => {
-        return <Move name={move.name} type={move.type} power={move.power} />
+    let pokemonMoves = props.moves.map((move, i) => {
+        return <Move key={i} name={move.name} type={move.type} power={move.power} />
     })
 
     /* Indicate that the current pokemon doesn't have a move */
     const noMoves = () => {
-        return <tr>This Pokemon has no moves :(</tr>;
+        return <tbody><tr>This Pokemon has no moves :(</tr></tbody>;
     }
 
     /* Displays pokemonMoves or noMoves, depending on whether the pokemon's moves are empty */
