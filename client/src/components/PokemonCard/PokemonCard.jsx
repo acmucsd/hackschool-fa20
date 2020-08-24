@@ -59,6 +59,7 @@ const PokemonCard = (props) => {
         // the current window size
         const handleResize = () => {
             setCanvasSize(window.innerWidth * 0.2);
+            loadableCanvas.current.loadSaveData(props.image, true);
         }
 
         window.addEventListener('resize', handleResize);
