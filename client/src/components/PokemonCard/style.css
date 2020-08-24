@@ -13,11 +13,6 @@
     overflow-y: scroll;
 }
 
-.pokemon-card-canvas {
-    width: 45vh;
-    height: 45vh;
-}
-
 .pokemon-card-container-inner {
     display: flex;
 }
@@ -35,11 +30,6 @@
 
 .pokemon-card-container p {
     margin: 0.5em;
-}
-
-.pokemon-photo {
-    max-height: 45vh;
-    border-radius: 4px 4px 0 0;
 }
 
 .pokemoncard-data-container {

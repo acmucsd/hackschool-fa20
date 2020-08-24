@@ -64,7 +64,7 @@ const ViewPokemon = () => {
     return (
         <div>
             <Navbar/>
-            <h2 className="view-pokemons-header">All Pokemons</h2>
+            <h2 className="view-pokemons-header">All Pokemon</h2>
             <div className="pokemon-filter">
                 <label htmlFor="type">Filter by type:{'\u00A0'}</label>
                 <select id="type" name="type" onChange={handleTypeChange}>

@@ -6,8 +6,7 @@ import CanvasDraw from 'react-canvas-draw';
 const PokemonCard = (props) => {
 
     const loadableCanvas = useRef();
-    const [width, setWidth] = useState(window.innerWidth);
-    const[height, setHeight] = useState(window.innerHeight);
+    const [canvasSize, setCanvasSize] = useState(window.innerWidth * 0.2);
 
     /* Color object to display different colors for each type */
     const colors = {
@@ -52,36 +51,32 @@ const PokemonCard = (props) => {
         return props.moves.length === 0 ? noMoves() : pokemonMoves;
     }
 
-    const getCanvasSize = () => {
-        return width * 0.2;
-    }
-
     useEffect(() => {
         if (loadableCanvas == null) { return; }
         loadableCanvas.current.loadSaveData(props.image, true);
 
-        const handleResize = () =>{
-            setWidth(window.innerWidth);
-            setHeight(window.innerHeight);
-            console.log("Yeeet resize");
+        // Since the CanvasDraw Component can't take vw or vh, we have to keep track of
+        // the current window size
+        const handleResize = () => {
+            setCanvasSize(window.innerWidth * 0.2);
         }
 
         window.addEventListener('resize', handleResize);
+
+        return (() => { window.removeEventListener('resize', handleResize); })
     }, [props.image]);
 
     return (
         <div className="pokemon-card-container">
             <div className="pokemon-card-container-inner">
-                <div className="pokemon-card-canvas">
-                    <CanvasDraw
-                        disabled
-                        hideGrid
-                        ref={loadableCanvas}
-                        saveData={props.image}
-                        canvasWidth={getCanvasSize()}
-                        canvasHeight={getCanvasSize()}
-                    />
-                </div>
+                <CanvasDraw
+                    disabled
+                    hideGrid
+                    ref={loadableCanvas}
+                    saveData={props.image}
+                    canvasWidth={canvasSize}
+                    canvasHeight={canvasSize}
+                />
                 <div className="pokemoncard-data-container">
                     <p className="pokemoncard-name"> {props.name}</p>
                     <p className="pokemon-description">{props.description}</p>
