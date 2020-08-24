@@ -1,4 +1,4 @@
-import React, {useEffect,useRef} from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import Move from '../Move/Move';
 import './style.css';
 import CanvasDraw from 'react-canvas-draw';
@@ -6,6 +6,8 @@ import CanvasDraw from 'react-canvas-draw';
 const PokemonCard = (props) => {
 
     const loadableCanvas = useRef();
+    const [width, setWidth] = useState(window.innerWidth);
+    const[height, setHeight] = useState(window.innerHeight);
 
     /* Color object to display different colors for each type */
     const colors = {
@@ -31,8 +33,8 @@ const PokemonCard = (props) => {
 
     /* Changes font color based on the pokemon type */
     const getStyle = (type) => {
-        if(type == null){return {};}
-        return {color: colors[type]};
+        if (type == null) { return {}; }
+        return { color: colors[type] };
     }
 
     /* Displays all moves by the pokemon */
@@ -50,22 +52,36 @@ const PokemonCard = (props) => {
         return props.moves.length === 0 ? noMoves() : pokemonMoves;
     }
 
+    const getCanvasSize = () => {
+        return width * 0.2;
+    }
+
     useEffect(() => {
-        if(loadableCanvas.current == null){return;}
-        loadableCanvas.current.loadSaveData(props.image);
-    },[props.image]);
+        if (loadableCanvas == null) { return; }
+        loadableCanvas.current.loadSaveData(props.image, true);
+
+        const handleResize = () =>{
+            setWidth(window.innerWidth);
+            setHeight(window.innerHeight);
+            console.log("Yeeet resize");
+        }
+
+        window.addEventListener('resize', handleResize);
+    }, [props.image]);
 
     return (
         <div className="pokemon-card-container">
             <div className="pokemon-card-container-inner">
-                <CanvasDraw
-                 disabled
-                 hideGrid
-                 ref={loadableCanvas}
-                 saveData={props.image}
-                 canvasWidth="45vh"
-                 canvasHeight="45vh"
-                />
+                <div className="pokemon-card-canvas">
+                    <CanvasDraw
+                        disabled
+                        hideGrid
+                        ref={loadableCanvas}
+                        saveData={props.image}
+                        canvasWidth={getCanvasSize()}
+                        canvasHeight={getCanvasSize()}
+                    />
+                </div>
                 <div className="pokemoncard-data-container">
                     <p className="pokemoncard-name"> {props.name}</p>
                     <p className="pokemon-description">{props.description}</p>

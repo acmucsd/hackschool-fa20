@@ -6,11 +6,16 @@
     border-width: 2px;
     box-shadow: 2% 4vh 10px #222222;
     width: 40vw;
-    height: 45vh;
+    height: 20vw;
     min-width: 200px;
     min-height: 240px;
     margin: 2vh 2vw;
     overflow-y: scroll;
+}
+
+.pokemon-card-canvas {
+    width: 45vh;
+    height: 45vh;
 }
 
 .pokemon-card-container-inner {
