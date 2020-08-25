@@ -10,5 +10,5 @@ Repository for ACM's Hack School - Learn the MERN - Fall 2020
 ```
 PORT=3000
 DATABASE_URL=your_database_url
-RNG_URL=http://uzby.com/api.php?min=3&max=8
+RNG_URL=http://names.drycodes.com/1?separator=space
 ```
