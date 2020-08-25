@@ -16,6 +16,9 @@ export default {
     },
 
     createPokemon: function (payload) {
+        const moves = payload.moves.filter(move => {
+            return move.name && move.type && move.power;
+        });
         const config = {
             method: 'post',
             url: `${serverURL}/api/pokemon`,
@@ -25,7 +28,7 @@ export default {
                 image: payload.image,
                 type1: payload.type1,
                 type2: payload.type2,
-                moves: payload.moves
+                moves,
             }
         };
         return axios(config);
