@@ -1,12 +1,14 @@
 const assert = require('assert');
 const app = require('../index');
 const axios = require('axios');
+const config = require('../server/config');
 
-const localUrl = 'http://localhost:8000/';
+const localUrl = 'http://localhost/' + config.port;
+
 describe('testing', function () {
 
   let server;
-  const id = '5f3cb5a239b7fc436f3337e2';
+  const id = '5f41e43d1a3fb80017bd9653';
 
   before(() => {
     server = app;
