@@ -12,7 +12,10 @@ server.use('/api', require('./server/api'));
 
 mongoose.connect(config.database_url, { useNewUrlParser: true, useUnifiedTopology: true }).then(() => {
   console.log('Connected to MongoDB database');
-  server.listen(config.port, () => {
-    console.log(`Server started on port ${config.port}`);
-  });
 });
+
+const app = server.listen(config.port, () => {
+  console.log(`Server started on port ${config.port}`);
+});
+
+module.exports = app;

@@ -4,7 +4,7 @@
   "description": "Pokemon Generator project for ACM's Fall 2020 Hack School",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha --timeout 10000 --exit",
     "start": "node index.js",
     "dev": "nodemon index.js"
   },
@@ -23,6 +23,7 @@
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "mocha": "^8.1.1",
     "mongoose": "^5.9.23",
     "multer": "^1.4.2"
   },
