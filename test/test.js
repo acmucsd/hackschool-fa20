@@ -3,7 +3,7 @@ const app = require('../index');
 const axios = require('axios');
 const config = require('../server/config');
 
-const localUrl = 'http://localhost/' + config.port;
+const localUrl = `http://localhost:${config.port}/`;
 
 describe('testing', function () {
 
