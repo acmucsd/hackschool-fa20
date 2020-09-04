@@ -44,8 +44,8 @@ label {
 
 .canvas {
     border: 1px solid black;
-    height: 35vw;
-    width: 35vw;
+    height: 500px;
+    width: 500px;
     margin: auto;
 }
 

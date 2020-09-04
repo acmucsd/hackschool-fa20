@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import Move from '../Move/Move';
 import './style.css';
 import CanvasDraw from 'react-canvas-draw';
@@ -6,7 +6,6 @@ import CanvasDraw from 'react-canvas-draw';
 const PokemonCard = (props) => {
 
     const loadableCanvas = useRef();
-    const [canvasSize, setCanvasSize] = useState(window.innerWidth * 0.2);
 
     /* Color object to display different colors for each type */
     const colors = {
@@ -54,17 +53,6 @@ const PokemonCard = (props) => {
     useEffect(() => {
         if (loadableCanvas == null) { return; }
         loadableCanvas.current.loadSaveData(props.image, true);
-
-        // Since the CanvasDraw Component can't take vw or vh, we have to keep track of
-        // the current window size
-        const handleResize = () => {
-            setCanvasSize(window.innerWidth * 0.2);
-            loadableCanvas.current.loadSaveData(props.image, true);
-        }
-
-        window.addEventListener('resize', handleResize);
-
-        return (() => { window.removeEventListener('resize', handleResize); })
     }, [props.image]);
 
     return (
@@ -75,8 +63,8 @@ const PokemonCard = (props) => {
                     hideGrid
                     ref={loadableCanvas}
                     saveData={props.image}
-                    canvasWidth={canvasSize}
-                    canvasHeight={canvasSize}
+                    canvasWidth={350}
+                    canvasHeight={350}
                 />
                 <div className="pokemoncard-data-container">
                     <p className="pokemoncard-name"> {props.name}</p>

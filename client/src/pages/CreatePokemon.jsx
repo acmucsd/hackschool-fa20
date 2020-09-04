@@ -74,7 +74,8 @@ const CreatePokemon = () => {
                             brushRadius={5}
                             lazyRadius={0}
                             ref={canvasInput}
-                            style={{ width: '100%', height: '100%' }} 
+                            canvasWidth={500}
+                            canvasHeight={500}
                         />
                     </div>
                     <div className="canvas-options">
