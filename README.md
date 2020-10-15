@@ -16,14 +16,14 @@ We have a Discord where you can always ask questions during the workshop, as wel
   
   
 ## Slides and Resources
-Part 1 (10/15) - [Intro to Front-end Development (HTML, CSS)] - [Slides Presentation](https://acmurl.com/hackschool-fa20-1)
+Part 1 (10/15) - HTML/CSS - [Slides Presentation](https://acmurl.com/hackschool-fa20-1)
 
-Part 2 (10/22) - [Intro to Back-end Development (Node.js)] - [Slides Presentation](https://acmurl.com/hackschool-fa20-2)
+Part 2 (10/22) - Javascript/Node.js - [Slides Presentation](https://acmurl.com/hackschool-fa20-2)
 
-Part 3 (10/29) - [React] - [Slides Presentation](https://acmurl.com/hackschool-fa20-3)
+Part 3 (10/29) - DOM Manipulation + React pt1 - [Slides Presentation](https://acmurl.com/hackschool-fa20-3)
 
-Part 4 (11/5) - [APIs, HTTP, and How the Web Works] - [Slides Presentation](https://acmurl.com/hackschool-fa20-4)
+Part 4 (11/5) - APIs + React pt2 - [Slides Presentation](https://acmurl.com/hackschool-fa20-4)
 
-Part 5 (11/12) - [Storing Data with Databases (MongoDB)] - [Slides Presentation](https://acmurl.com/hackschool-fa20-5)
+Part 5 (11/12) - Databases + React pt3 - [Slides Presentation](https://acmurl.com/hackschool-fa20-5)
 
-Part 6 (11/19) - [Deploying with Heroku] - [Slides Presentation](https://acmurl.com/hackschool-fa20-6)
+Part 6 (11/19) - Testing + Continuous Integration & Deployment - [Slides Presentation](https://acmurl.com/hackschool-fa20-6)
