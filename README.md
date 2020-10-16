@@ -1,4 +1,4 @@
-# hackschool-fa20
+# Hack School: Learn the MERN
 Repository for ACM's Hack School - Learn the MERN - Fall 2020
 
 ## Preparing for Hack School
