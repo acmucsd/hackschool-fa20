@@ -29,4 +29,4 @@ Part 5 (11/12) - Databases + React pt3 - [Slides Presentation](https://acmurl.co
 Part 6 (11/19) - Testing + Continuous Integration & Deployment - [Slides Presentation](https://acmurl.com/hackschool-fa20-6)
 
 ## Give us Feedback! 
-At ACM Hack, we want to ensure that our events are always of good quality. We appreciate any piece of feedback you may have, whetehr positive or negative, which can be viewed here: http://acmurl.com/hackschool-feedback
+At ACM Hack, we want to ensure that our events are always of good quality. We appreciate any piece of feedback you may have, whether it's positive or negative. Feedback can be submitted here: http://acmurl.com/hackschool-feedback
