@@ -6,7 +6,7 @@ Follow the instructions found in our Workshop 0 preparing slide deck: https://ac
   
 We do expect that you try to attend every workshop, however we do have a way to catch up if you have to miss a workshop. Instructions for catching up are always found here: https://acmurl.com/hackschool-fa20-pt0
   
-We will also record every workshop, which can be found here: https://acmurl.com/youtube
+We will also record every workshop, which can be found here: https://acmurl.com/youtube as well as our [playlist](https://www.youtube.com/watch?v=VRifC6mFma4&list=PLpmCTDt8lemWE4CQ7shdIJ0VYXcErWw22)
 
 ## Get access to our resources
 We have a Discord where you can always ask questions during the workshop, as well as office hours you can attend. Links found below:
