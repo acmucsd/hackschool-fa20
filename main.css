@@ -1,0 +1,73 @@
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+#navbar {
+    /*
+    - Change background color to #BF4141
+    - Add a 15px-thick black border on the bottom
+    - Turn the navbar into a flex container w/ space between items
+    - Align the items vertically across the center
+    - Add a bottom margin of 25px
+    */
+    background-color: #BF4141;
+    border-bottom: 15px solid black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.title > h1 {
+    /*
+    - Change font color to white
+    - Add a left margin of 16px
+    */
+    color: white;
+    margin-left: 16px;
+}
+
+.nav-buttons a {
+    /*
+    - Change font color to white
+    - Increase the font size to 18px
+    - Add a right margin of 16px
+    - Get rid of the link underline with text-decoration
+    */
+    color: white;
+    font-size: 18px;
+    margin-right: 16px;
+    text-decoration: none;
+}
+
+.create-page {
+    /*
+    - Make it a flex container where items are spaced evenly and aligned to the center
+    */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.pokemon-form {
+    /*
+    - Add a 1px black border around the form
+    - Add 20px of padding inside the form
+    - Make the form only 35% wide
+    */
+    border: 1px solid black;
+    padding: 20px;
+    width: 35%;
+}
+
+.form-row {
+    /*
+    - Add a 16px bottom margin
+    */
+    margin-bottom: 16px;
+}

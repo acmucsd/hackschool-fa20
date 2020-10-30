@@ -1,0 +1,37 @@
+#navbar {
+    /*
+    - Change background color to #BF4141
+    - Add a 15px-thick black border on the bottom
+    - Turn the navbar into a flex container w/ space between items
+    - Align the items vertically across the center
+    - Add a bottom margin of 25px
+    */
+    background-color: #BF4141;
+    border-bottom: 15px solid black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.title > h1 {
+    /*
+    - Change font color to white
+    - Add a left margin of 16px
+    */
+    color: white;
+    margin-left: 16px;
+}
+
+.nav-buttons a {
+    /*
+    - Change font color to white
+    - Increase the font size to 18px
+    - Add a right margin of 16px
+    - Get rid of the link underline with text-decoration
+    */
+    color: white;
+    font-size: 18px;
+    margin-right: 16px;
+    text-decoration: none;
+}

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Pokemon Generator</title>
+        <link rel="stylesheet" href="main.css" type="text/css">
+    </head>
+    <body>
+        <div id="navbar">
+            <div class="title">
+                <h1>Pokemon Generator</h1>
+            </div>
+            <div class="nav-buttons">
+                <a href="/create">Create New Pokemon</a>
+                <a href="/view">View All Pokemon</a>
+            </div>
+        </div>
+        <form class="create-page">
+            <div class="pokemon-form">
+                <h2>Create a Pokemon</h2>
+                <div class="form-row">
+                    <label for="name">Name</label>
+                    <input id="name" name="name" required></input>
+                    <button>Generate Random Name</button>
+                </div>
+                <div class="form-row">
+                    <label for="desc">Description</label>
+                    <input id="desc" name="desc" required></input>
+                </div>
+                <div class="form-row">
+                    <label for="type1">Type 1</label>
+                    <select id="type1" name="type1">
+                        <option>Normal</option>
+                        <option>Fire</option>
+                        <option>Water</option>
+                        <option>Grass</option>
+                        <option>Electric</option>
+                        <option>Psychic</option>
+                        <option>Ice</option>
+                        <option>Dragon</option>
+                        <option>Dark</option>
+                        <option>Fairy</option>
+                        <option>Fighting</option>
+                        <option>Flying</option>
+                        <option>Poison</option>
+                        <option>Ground</option>
+                        <option>Rock</option>
+                        <option>Bug</option>
+                        <option>Ghost</option>
+                        <option>Steel</option>
+                    </select>
+                    <label htmlFor="type2">Type 2</label>
+                    <select id="type2" name="type2">
+                        <option value=""></option>
+                        <option>Normal</option>
+                        <option>Fire</option>
+                        <option>Water</option>
+                        <option>Grass</option>
+                        <option>Electric</option>
+                        <option>Psychic</option>
+                        <option>Ice</option>
+                        <option>Dragon</option>
+                        <option>Dark</option>
+                        <option>Fairy</option>
+                        <option>Fighting</option>
+                        <option>Flying</option>
+                        <option>Poison</option>
+                        <option>Ground</option>
+                        <option>Rock</option>
+                        <option>Bug</option>
+                        <option>Ghost</option>
+                        <option>Steel</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <label for="move1">Move 1</label>
+                    <input id="move1" name="move1" required></input>
+                    <label for="move1type">Type</label>
+                    <select id="move1type" name="move1type">
+                        <option>Normal</option>
+                        <option>Fire</option>
+                        <option>Water</option>
+                        <option>Grass</option>
+                        <option>Electric</option>
+                        <option>Psychic</option>
+                        <option>Ice</option>
+                        <option>Dragon</option>
+                        <option>Dark</option>
+                        <option>Fairy</option>
+                        <option>Fighting</option>
+                        <option>Flying</option>
+                        <option>Poison</option>
+                        <option>Ground</option>
+                        <option>Rock</option>
+                        <option>Bug</option>
+                        <option>Ghost</option>
+                        <option>Steel</option>
+                    </select>
+                    <label for="move1power">Power</label>
+                    <input type="number" id="move1power" name="move1power" min="0" max="100" value="0"></input>
+                </div>
+                <div class="form-row">
+                    <label for="move2">Move 2</label>
+                    <input id="move2" name="move2"></input>
+                    <label for="move2type">Type</label>
+                    <select id="move2type" name="move2type">
+                        <option value=""></option>
+                        <option>Normal</option>
+                        <option>Fire</option>
+                        <option>Water</option>
+                        <option>Grass</option>
+                        <option>Electric</option>
+                        <option>Psychic</option>
+                        <option>Ice</option>
+                        <option>Dragon</option>
+                        <option>Dark</option>
+                        <option>Fairy</option>
+                        <option>Fighting</option>
+                        <option>Flying</option>
+                        <option>Poison</option>
+                        <option>Ground</option>
+                        <option>Rock</option>
+                        <option>Bug</option>
+                        <option>Ghost</option>
+                        <option>Steel</option>
+                    </select>
+                    <label for="move2power">Power</label>
+                    <input type="number" id="move2power" name="move2power" min="0" max="100" value="0"></input>
+                </div>
+                <div class="form-row">
+                    <label for="move3">Move 3</label>
+                    <input id="move3" name="move3"></input>
+                    <label for="move3type">Type</label>
+                    <select id="move3type" name="move3type">
+                        <option value=""></option>
+                        <option>Normal</option>
+                        <option>Fire</option>
+                        <option>Water</option>
+                        <option>Grass</option>
+                        <option>Electric</option>
+                        <option>Psychic</option>
+                        <option>Ice</option>
+                        <option>Dragon</option>
+                        <option>Dark</option>
+                        <option>Fairy</option>
+                        <option>Fighting</option>
+                        <option>Flying</option>
+                        <option>Poison</option>
+                        <option>Ground</option>
+                        <option>Rock</option>
+                        <option>Bug</option>
+                        <option>Ghost</option>
+                        <option>Steel</option>
+                    </select>
+                    <label for="move3power">Power</label>
+                    <input type="number" id="move3power" name="move3power" min="0" max="100" value="0"></input>
+                </div>
+                <div class="form-row">
+                    <label for="move4">Move 4</label>
+                    <input id="move4" name="move4"></input>
+                    <label for="move4type">Type</label>
+                    <select id="move4type" name="move4type">
+                        <option value=""></option>
+                        <option>Normal</option>
+                        <option>Fire</option>
+                        <option>Water</option>
+                        <option>Grass</option>
+                        <option>Electric</option>
+                        <option>Psychic</option>
+                        <option>Ice</option>
+                        <option>Dragon</option>
+                        <option>Dark</option>
+                        <option>Fairy</option>
+                        <option>Fighting</option>
+                        <option>Flying</option>
+                        <option>Poison</option>
+                        <option>Ground</option>
+                        <option>Rock</option>
+                        <option>Bug</option>
+                        <option>Ghost</option>
+                        <option>Steel</option>
+                    </select>
+                    <label for="move4power">Power</label>
+                    <input type="number" id="move4power" name="move4power" min="0" max="100" value="0"></input>
+                </div>
+                <input type="submit" value="Submit"></input>
+            </div>
+        </form>
+    </body>
+</html>
