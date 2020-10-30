@@ -2,7 +2,7 @@
 
 Slides Link: [here](acmurl.com/hackschool-fa20-pt3)
 
-Workshop Recording: [here]
+Workshop Recording: [here](https://www.youtube.com/channel/UCyjPATFqc3FwOiuqJ2UG1Eg)
 
 
 In the first part of this workshop, we learned about DOM and React. Specifically, we learned **how to access elements using JavaScript and DOM**, **the difference between React and HTML**, **components**, and **props**.
