@@ -1,12 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
 import CreatePokemon from './pages/CreatePokemon';
+import ViewPokemon from './pages/ViewPokemon';
+import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <CreatePokemon />
-    </div>
+    <Router>
+      <div className="App">
+        <Switch>
+          <Redirect from="/" to="/create" exact></Redirect>
+          <Route path="/create" exact component={CreatePokemon}></Route>
+          <Route path="/view" exact component={ViewPokemon}></Route>
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
