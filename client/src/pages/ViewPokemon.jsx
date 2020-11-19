@@ -12,8 +12,10 @@ const ViewPokemon = () => {
 
     useEffect(() => {
         API.getPokemon().then((response) => {
+            console.log(response);
             setBody(response.data.pokemon);
         });
+
     }, []);
 
     const currentPokemons = body.map((val) => <PokemonCard name={val.name} description={val.description} image={val.image} 
