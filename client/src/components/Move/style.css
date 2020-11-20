@@ -1,0 +1,8 @@
+.pokemon-move td {
+    padding: 2px;
+}
+
+.move-type {
+    font-weight: bold;
+    border-radius: 3px;
+}

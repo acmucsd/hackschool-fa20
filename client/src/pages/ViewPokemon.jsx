@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import API from '../API';
 import './style.css';
@@ -16,17 +16,12 @@ const ViewPokemon = () => {
         });
     }, []);
 
-    const currentPokemons = body.map((val) => <PokemonCard name={val.name} description={val.description} image={val.image} 
-                                                        type1={val.type1} type2={val.type2} moves={val.moves} ></PokemonCard>);
-
-    const logPokemon = () => {
-        console.log(body);
-    }
+    const currentPokemons = body.map((val) => <PokemonCard name={val.name} description={val.description} image={val.image}
+        type1={val.type1} type2={val.type2} moves={val.moves} ></PokemonCard>);
 
     return (
         <div>
             <Navbar />
-            <button onClick={logPokemon}>Log Pokemon</button>
             <div className="pokemon">
                 {currentPokemons}
             </div>
