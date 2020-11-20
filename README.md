@@ -8,6 +8,8 @@ We do expect that you try to attend every workshop, however we do have a way to 
   
 We will also record every workshop, which can be found here: https://acmurl.com/youtube as well as our [playlist](https://www.youtube.com/watch?v=VRifC6mFma4&list=PLpmCTDt8lemWE4CQ7shdIJ0VYXcErWw22)
 
+Reference Pokemon Generator: https://acmurl.com/pokemon-generator
+
 ## Get access to our resources
 We have a Discord where you can always ask questions during the workshop, as well as office hours you can attend. Links found below:
   - Discord: https://acmurl.com/hack-discord
