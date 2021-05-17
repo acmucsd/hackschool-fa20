@@ -4,8 +4,9 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const server = express();
 
-server.use(express.urlencoded({ extended: true }));
-server.use(express.json());
+
+server.use(express.json({ limit: '20mb' }));
+server.use(express.urlencoded({ extended: true, limit: '20mb' }));
 server.use(cors());
 
 server.use('/api', require('./server/api'));
