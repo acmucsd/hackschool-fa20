@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- <link rel="icon" href="https://glitch.com/favicon.ico" /> -->
+
+    <title>Create pokeman</title>
+
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css" type="text/css"/>
+
+    <!-- import the webpage's javascript file -->
+    <!--     <script src="/script.js" defer></script> -->
+  </head>
+  
+  <body>
+    <!-- this is the start of content -->
+    <div class="navBar">
+      <div class="title">
+        <h1>Pokemon Generator</h1>
+      </div>
+      <div class="navBtn">
+        <a href="/createPokemon.html">Create New Pokemon</a>
+        <a href="/viewPokemon.html">View Pokemon</a>
+      </div>
+    </div>
+
+    <form>
+      <div class="pokemon-form">
+        <h2>Create a pokemon</h2>
+        <div class="form-row">
+          <label for="fname">Name</label>
+          <input type="text" id="fname" name="fname" required />
+          <button id="rdmNameBtn">Generate random name</button>
+        </div>
+
+        <div class="form-row">
+          <label for="fdes">Description</label>
+          <input type="text" id="fdes" name="fdes" required />
+        </div>
+
+        <div class="form-row">
+          <label for="ftype1">Type 1</label>
+          <select id="ftype1" name="ftype1">
+            <option value=""></option>
+            <option>Normal</option>
+            <option>Electric</option>
+            <option>Water</option>
+            <option>Fire</option>
+            <option>Fairy</option>
+          </select>
+
+          <label for="ftype2">Type 2</label>
+          <select id="ftype2" name="ftype2">
+            <option value=""></option>
+            <option>Normal</option>
+            <option>Electric</option>
+            <option>Water</option>
+            <option>Fire</option>
+            <option>Fairy</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <label for="fmv1">Move 1</label>
+          <input type="text" id="fmv1" name="fmv1" required />
+
+          <label for="ftype-mv1">Type</label>
+          <select id="ftype-mv1" name="ftype-mv1">
+            <option value=""></option>
+            <option>Normal</option>
+            <option>Electric</option>
+            <option>Water</option>
+            <option>Fire</option>
+            <option>Fairy</option>
+          </select>
+
+          <label for="fpow-mv1">Power</label>
+          <input
+            type="number"
+            id="fpow-mv1"
+            name="fpow-mv1"
+            max="100"
+            min="0"
+            value="0"
+          />
+        </div>
+
+        <div class="form-row">
+          <label for="fmv2">Move 2</label>
+          <input type="text" id="fmv2" name="fmv2" required />
+
+          <label for="ftype-mv2">Type</label>
+          <select id="ftype-mv2" name="ftype-mv2">
+            <option value=""></option>
+            <option>Normal</option>
+            <option>Electric</option>
+            <option>Water</option>
+            <option>Fire</option>
+            <option>Fairy</option>
+          </select>
+
+          <label for="fpow-mv2">Power</label>
+          <input
+            type="number"
+            id="fpow-mv2"
+            name="fpow-mv2"
+            max="100"
+            min="0"
+            value="0"
+          />
+        </div>
+
+        <input type="submit" value="Submit" />
+      </div>
+    </form>
+  </body>
+</html>
