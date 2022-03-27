@@ -1,31 +1,33 @@
 * {
   margin: 0;
 }
-a{
+
+a {
   color: black;
 }
+
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-  sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-.navBar{
-  background-color: red;
+.navBar {
+  background-color: #CC0000;
   padding: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-bottom: 4px dashed black;
 }
 
 .navBtn {
   margin-right: 30px;
   color: white;
   display: flex;
-  justify-content: space-between;
 }
 
 .navBtn a {
@@ -33,21 +35,21 @@ body {
   margin-right: 30px;
 }
 
-.title{
+.title {
   color: white;
   margin-left: 20px;
 }
 
-form{
+form {
   margin: 10px;
   border: 1px solid black;
   padding: 20px;
   width: 50%;
 }
-.pokeman{
+.pokeman {
   margin: 10px;
   margin-bottom: 20px;
-/*   background-color: lightcyan; */
+  /*   background-color: lightcyan; */
   padding: 10px;
   border: 1px groove gray;
 }
@@ -56,27 +58,27 @@ form{
   margin-left: 10px;
 }
 
-mark{
-  background-color:lightgreen;
-  position:relative;
+mark {
+  background-color: #a2d7d5;
+  position: relative;
   padding: 0.1em;
-  margin:0.1em;
+  margin: 0.1em;
 }
 
-mark:before{
-  content:"";
-  z-index:-1;
-  left:-0.5em;
-  top:0.1em;
-  border-width:0.5em;
-  border-style:solid;
-  border-color:lightgreen;
-  position:absolute;
-  width:100%;
-  border-left-color:transparent;
-  border-right-color:transparent;
+mark:before {
+  content: "";
+  z-index: -1;
+  left: -0.5em;
+  top: 0.1em;
+  border-width: 0.5em;
+  border-style: solid;
+  border-color: #a2d7d5;
+  position: absolute;
+  width: 100%;
+  border-left-color: transparent;
+  border-right-color: transparent;
 }
 
-.form-row{
+.form-row {
   margin-bottom: 15px;
 }

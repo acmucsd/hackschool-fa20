@@ -11,9 +11,13 @@
     <link rel="stylesheet" href="/style.css" type="text/css" />
 
     <!-- import the webpage's javascript file -->
-    <!--     <script src="/script.js" defer></script> -->
+    <script src="/script.js" defer></script>
   </head>
   <body>
+    <audio
+      src="https://cdn.glitch.global/902c24e7-bf9e-4d0e-9eb9-74607d0a208a/Pika%20Pikapika%20Pikachuu.mp3?v=1648144654360"
+      id="audioPikachu"
+    ></audio>
     <!-- this is the start of content -->
     <div class="navBar">
       <div class="title">
@@ -27,12 +31,15 @@
 
     <div class="pokeman">
       <h2 class="pokeman-name"><mark>Pikachu</mark></h2>
-      <img
-        src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png"
-        alt="Pikachu"
-        width="300"
-        height="300"
-      />
+      <button onclick="playAudio()">
+        <img
+          src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png"
+          alt="Pikachu"
+          width="300"
+          height="300"
+        />
+      </button>
+
       <p>
         <a href="https://www.pokemon.com/us/pokedex/pikachu">Pikachu</a> can
         generate powerful electricity have cheek sacs that are extra soft and
@@ -69,6 +76,5 @@
         erupt, apparently the pain subsides for a while.
       </p>
     </div>
-    
   </body>
 </html>

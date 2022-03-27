@@ -1,4 +1,16 @@
-/* If you're feeling fancy you can add interactivity 
-    to your site with Javascript */
+let isPlaying = false; 
+let audioPikachu = document.getElementById("audioPikachu");
+audioPikachu.volume = 0.1;
 
-console.log("Hello, world!");
+let playAudio = () =>{
+  console.log("playing");
+  if (!isPlaying){
+    audioPikachu.play();
+    isPlaying = true; 
+  } else{
+    audioPikachu.pause();
+    isPlaying = false; 
+  }
+  
+}
+
